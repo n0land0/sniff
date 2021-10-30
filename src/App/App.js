@@ -12,7 +12,12 @@ class App extends React.Component {
   }
 
   componentDidMount() {
+    // fetch
     this.setState({ users: userData })
+  }
+
+  findUser = (userId) => {
+    return users.find(user => user.id === userId);
   }
 
   render() {
@@ -24,9 +29,10 @@ class App extends React.Component {
         <Route path='/findfriends' render={ () =>
           <Gallery users={users}/>
         } />
-        <Route path='/profile/:userId' render={ ({ match }) =>
-          console.log(match.params.id)
-        } />
+        <Route path='/profile/:userId' render={ ({ match }) => {
+          const selectedProfile = this.findUser(match.params.id)
+          return <Profile {...selectedProfile}/>
+        } }/>
       </main>
     )
   }
