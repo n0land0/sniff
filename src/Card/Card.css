@@ -1,11 +1,9 @@
 .profile-card {
   display: flex;
   flex-direction: column;
-
 }
 
 .profile-card img {
   width: 10rem;
   height: 10rem;
-  
 }
