@@ -1,4 +1,5 @@
-import React from './react'
+import React from 'react'
+import { Route, Switch, Link, Redirect } from 'react-router-dom'
 
 class App extends React.Component {
   state = {
@@ -9,6 +10,7 @@ class App extends React.Component {
     return (
       <main>
 
+        <Route path='/findfriends' render={ () => <Gallery />} />
       </main>
     )
   }
