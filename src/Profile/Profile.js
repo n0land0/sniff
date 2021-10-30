@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { Route, Switch, Link, Redirect } from 'react-router-dom'
 
+import PlaydateForm from '../PlaydateForm/PlaydateForm'
+
 import userData from '../userData'
 import './Profile.css'
 
@@ -27,6 +29,7 @@ class Profile extends Component {
         <p>Owner's Name: {ownerName}</p>
         <p>Dog's Name: {dogName}</p>
         <p>Bio: {bio}</p>
+        <PlaydateForm />
       </section>
     )
   }
