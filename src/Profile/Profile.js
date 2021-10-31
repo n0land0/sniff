@@ -6,6 +6,8 @@ import PlaydateForm from '../PlaydateForm/PlaydateForm'
 import userData from '../userData'
 import './Profile.css'
 
+// it's starting to feel like building this as a modal will make site navigation a lot cleaner - confine page changes to navbar
+
 class Profile extends Component {
   state = {
     id: 0,
