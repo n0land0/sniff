@@ -8,6 +8,7 @@ const userData = [
     profilePic: 'https://i.imgur.com/i4UwYMu.jpeg',
     dogBreed: 'Sheppard',
     bio: lorem,
+    appointments: []
   },
   {
     id: 2,
@@ -16,6 +17,7 @@ const userData = [
     profilePic: 'https://i.imgur.com/LRoLTlK.jpeg',
     dogBreed: 'Labrador',
     bio: lorem,
+    appointments: []
   },
   {
     id: 3,
@@ -24,6 +26,7 @@ const userData = [
     profilePic: 'https://i.imgur.com/ZMPYHsk.jpeg',
     dogBreed: 'Pit Bull',
     bio: lorem,
+    appointments: []
   },
   {
     id: 4,
@@ -32,6 +35,7 @@ const userData = [
     profilePic: 'https://i.imgur.com/tIqs5vu.jpeg',
     dogBreed: 'Wiener',
     bio: lorem,
+    appointments: []
   },
   {
     id: 5,
@@ -40,6 +44,7 @@ const userData = [
     profilePic: 'https://i.imgur.com/ZKGFJbC.jpeg',
     dogBreed: 'Corgi',
     bio: lorem,
+    appointments: []
   }
 ]
 
