@@ -11,7 +11,9 @@ import userData from '../userData'
 
 class App extends Component {
   state = {
-    currentUser: {},
+    currentUser: {
+      appointments: []
+    },
     users: []
   }
 
@@ -46,7 +48,7 @@ class App extends Component {
       <Nav />
       <main>
         <Route exact path='/dashboard' render={ () =>
-          <Dashboard />
+          <Dashboard appointments={currentUser.appointments} users={filteredUsers}/>
         } />
         <Route exact path='/findfriends' render={ () =>
           <Gallery users={filteredUsers}/>
