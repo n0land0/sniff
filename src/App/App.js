@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Route, Switch, Link, Redirect } from 'react-router-dom'
 import './App.css'
 
+import Nav from '../Nav/Nav'
 import Gallery from '../Gallery/Gallery'
 import Profile from '../Profile/Profile'
 import Dashboard from '../Dashboard/Dashboard'
@@ -39,12 +40,15 @@ class App extends Component {
   render() {
     const { currentUser, users } = this.state
     const filteredUsers = users.filter(user => user.id !== currentUser.id)
+
     return (
+      <>
+      <Nav />
       <main>
-        <Route path='/dashboard' render={ () =>
+        <Route exact path='/dashboard' render={ () =>
           <Dashboard />
         } />
-        <Route path='/findfriends' render={ () =>
+        <Route exact path='/findfriends' render={ () =>
           <Gallery users={filteredUsers}/>
         } />
         <Route path='/profile/:userId' render={ ({ match }) =>
@@ -54,6 +58,7 @@ class App extends Component {
           />
         } />
       </main>
+      </>
     )
   }
 }
