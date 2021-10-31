@@ -12,6 +12,10 @@ const fetchCalls = {
       })
   },
 
+  // modifyAppointments = () => {}
+
+  // ? getAppointments ?
+
   checkResponse = () => {
     if (!response.ok) {
       if (response.status === 422 || response.status === 403) {
