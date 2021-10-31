@@ -13,6 +13,7 @@ class Profile extends Component {
     dogName: '',
     profilePic: '',
     bio: '',
+    appointments: []
   }
 
   componentDidMount = () => {
