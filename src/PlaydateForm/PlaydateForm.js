@@ -23,10 +23,11 @@ class PlaydateForm extends Component {
   handleSubmit = (event) => {
     event.preventDefault()
     const { date, location } = this.state
-    const { addPlaydateForSelectedUser } = this.props
+    const { currentUserId, selectedUserId, addPlaydateForSelectedUser } = this.props
+    const usersInvolved = [ currentUserId, selectedUserId ]
     const newPlaydate = {
       id: Date.now(),
-      date, location
+      date, location, usersInvolved
     }
     addPlaydateForSelectedUser(newPlaydate)
     this.clearInputs()
@@ -53,6 +54,7 @@ class PlaydateForm extends Component {
           name='location'
           value={location}
           onChange={this.handleChange}
+          required
         >
           <option value='' disabled selected hidden>Choose a park</option>
           {parkOptions}

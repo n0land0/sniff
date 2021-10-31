@@ -48,7 +48,10 @@ class App extends Component {
           <Gallery users={filteredUsers}/>
         } />
         <Route path='/profile/:userId' render={ ({ match }) =>
-          <Profile userId={match.params.userId} addPlaydateForCurrentUser={this.addPlaydateForCurrentUser}/>
+          <Profile
+            currentUserId={currentUser.id}
+            selectedUserId={+match.params.userId} addPlaydateForCurrentUser={this.addPlaydateForCurrentUser}
+          />
         } />
       </main>
     )
