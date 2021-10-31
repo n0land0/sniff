@@ -1,13 +1,14 @@
-import React from 'react'
+import React, { Component } from 'react'
 import { Route, Switch, Link, Redirect } from 'react-router-dom'
 import './App.css'
-import Profile from '../Profile/Profile'
 
 import Gallery from '../Gallery/Gallery'
+import Profile from '../Profile/Profile'
+import Dashboard from '../Dashboard/Dashboard'
 
 import userData from '../userData'
 
-class App extends React.Component {
+class App extends Component {
   state = {
     currentUser: {},
     users: []
