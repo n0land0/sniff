@@ -23,12 +23,12 @@ class PlaydateForm extends Component {
   handleSubmit = (event) => {
     event.preventDefault()
     const { date, location } = this.state
-    const { addPlaydate } = this.props
+    const { addPlaydateForSelectedUser } = this.props
     const newPlaydate = {
       id: Date.now(),
       date, location
     }
-    addPlaydate(newPlaydate)
+    addPlaydateForSelectedUser(newPlaydate)
     this.clearInputs()
   }
 

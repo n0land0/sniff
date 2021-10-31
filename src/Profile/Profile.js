@@ -18,15 +18,16 @@ class Profile extends Component {
 
   componentDidMount = () => {
     // fetch
-    const selectedProfile = userData.find(user => user.id === +this.props.id)
+    const selectedProfile = userData.find(user => user.id === +this.props.userId)
     this.setState({...selectedProfile})
   }
 
-  addPlaydate = (newPlaydate) => {
+  addPlaydateForSelectedUser = (newPlaydate) => {
     const { appointments } = this.state
     // fetch (POST) new playdate for selected profile & current user
     // fetch (GET) updated appointments for selected profile & current user
     this.setState({ appointments: [...appointments, newPlaydate]})
+    this.props.addPlaydateForCurrentUser(newPlaydate)
   }
 
   render() {
@@ -42,7 +43,7 @@ class Profile extends Component {
         <p>Dog's Name: {dogName}</p>
         <p>Bio: {bio}</p>
         {playdateReminders}
-        <PlaydateForm addPlaydate={this.addPlaydate}/>
+        <PlaydateForm addPlaydateForSelectedUser={this.addPlaydateForSelectedUser}/>
         <Link to='/findfriends'>
           <button>Find more friends</button>
         </Link>
