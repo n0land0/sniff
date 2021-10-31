@@ -9,13 +9,22 @@ import userData from '../userData'
 
 class App extends React.Component {
   state = {
+    currentUser: {},
     users: []
   }
 
   componentDidMount() {
     // fetch
-    this.setState({ users: userData })
+    this.setState({ currentUser: userData[1], users: userData })
   }
+
+  // addPlaydateForCurrentUser = (newPlaydate) => {
+  //   const { appointments } = this.state.currentUser
+  //   this.setState({ currentUser: {
+  //     ...currentUser,
+  //     appointments: [...appointments, newPlaydate]
+  //   }})
+  // }
 
   // findUser = (users, userId) => {
   //   const selectedProfile = this.findUser(users, match.params.id,)
@@ -24,13 +33,13 @@ class App extends React.Component {
   // }
 
   render() {
-    const { users } = this.state
-
+    const { currentUser, users } = this.state
+    const filteredUsers = users.filter(user => user.id !== currentUser.id)
     return (
       <main>
 
         <Route path='/findfriends' render={ () =>
-          <Gallery users={users}/>
+          <Gallery users={filteredUsers}/>
         } />
         <Route path='/profile/:userId' render={ ({ match }) =>
           <Profile id={match.params.userId}/>
