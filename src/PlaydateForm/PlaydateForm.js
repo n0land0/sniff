@@ -20,12 +20,22 @@ class PlaydateForm extends Component {
     this.setState({ [name]: value })
   }
 
+  handleSubmit = (event) => {
+    event.preventDefault()
+    const { date, location } = this.state
+    const newPlaydate = {
+      id: Date.now(),
+      date, location
+    }
+    console.log(newPlaydate)
+  }
+
   render() {
     const { date, location, parks } = this.state
     const parkOptions = parks.map(park => <option value={park} >{park}</option>)
 
     return (
-      <form>
+      <form onSubmit={this.handleSubmit}>
         <input
           type='date'
           name='date'
@@ -38,8 +48,10 @@ class PlaydateForm extends Component {
           value={location}
           onChange={this.handleChange}
         >
+          <option value='' disabled selected hidden>Choose a park</option>
           {parkOptions}
         </select>
+        <button>Set Playdate</button>
       </form>
     )
   }
