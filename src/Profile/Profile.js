@@ -30,13 +30,18 @@ class Profile extends Component {
   }
 
   render() {
-    const { ownerName, dogName, profilePic, bio } = this.state
+    const { ownerName, dogName, profilePic, bio, appointments } = this.state
+    const playdateReminders = appointments.map(appt =>
+      <p>You have a playdate with {dogName} and {ownerName} on {appt.date} at {appt.location}.</p>
+    )
+
     return (
       <section className='profile'>
         <img src={profilePic} />
         <p>Owner's Name: {ownerName}</p>
         <p>Dog's Name: {dogName}</p>
         <p>Bio: {bio}</p>
+        {playdateReminders}
         <PlaydateForm addPlaydate={this.addPlaydate}/>
       </section>
     )
