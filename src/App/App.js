@@ -32,6 +32,9 @@ class App extends React.Component {
   //   return users.find(user => user.id === userId);
   // }
 
+
+// should PlaydateForm be a sibling of Profile?
+  // ...if currentUser playdates need to be added to App state
   render() {
     const { currentUser, users } = this.state
     const filteredUsers = users.filter(user => user.id !== currentUser.id)
