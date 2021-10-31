@@ -22,6 +22,13 @@ class Profile extends Component {
     this.setState({...selectedProfile})
   }
 
+  addPlaydate = (newPlaydate) => {
+    const { appointments } = this.state
+    // fetch (POST) new playdate for selected profile & current user
+    // fetch (GET) updated appointments for selected profile & current user
+    this.setState({ appointments: [...appointments, newPlaydate]})
+  }
+
   render() {
     const { ownerName, dogName, profilePic, bio } = this.state
     return (
@@ -30,7 +37,7 @@ class Profile extends Component {
         <p>Owner's Name: {ownerName}</p>
         <p>Dog's Name: {dogName}</p>
         <p>Bio: {bio}</p>
-        <PlaydateForm />
+        <PlaydateForm addPlaydate={this.addPlaydate}/>
       </section>
     )
   }
