@@ -43,6 +43,9 @@ class Profile extends Component {
         <p>Bio: {bio}</p>
         {playdateReminders}
         <PlaydateForm addPlaydate={this.addPlaydate}/>
+        <Link to='/findfriends'>
+          <button>Find more friends</button>
+        </Link>
       </section>
     )
   }
