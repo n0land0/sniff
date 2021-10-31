@@ -19,13 +19,13 @@ class App extends Component {
     this.setState({ currentUser: userData[1], users: userData })
   }
 
-  // addPlaydateForCurrentUser = (newPlaydate) => {
-  //   const { appointments } = this.state.currentUser
-  //   this.setState({ currentUser: {
-  //     ...currentUser,
-  //     appointments: [...appointments, newPlaydate]
-  //   }})
-  // }
+  addPlaydateForCurrentUser = (newPlaydate) => {
+    const { appointments } = this.state.currentUser
+    this.setState({ currentUser: {
+      ...this.state.currentUser,
+      appointments: [...appointments, newPlaydate]
+    }})
+  }
 
   // findUser = (users, userId) => {
   //   const selectedProfile = this.findUser(users, match.params.id,)
@@ -41,12 +41,14 @@ class App extends Component {
     const filteredUsers = users.filter(user => user.id !== currentUser.id)
     return (
       <main>
-
+        <Route path='/dashboard' render={ () =>
+          <Dashboard />
+        } />
         <Route path='/findfriends' render={ () =>
           <Gallery users={filteredUsers}/>
         } />
         <Route path='/profile/:userId' render={ ({ match }) =>
-          <Profile id={match.params.userId}/>
+          <Profile userId={match.params.userId} addPlaydateForCurrentUser={this.addPlaydateForCurrentUser}/>
         } />
       </main>
     )
