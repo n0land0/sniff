@@ -22,6 +22,11 @@ class App extends Component {
     this.setState({ currentUser: userData[1], users: userData })
   }
 
+  // componentDidUpdate() {
+  //   // fetch
+  //   this.setState({ currentUser: userData[1], users: userData })
+  // }
+
   addPlaydateForCurrentUser = (newPlaydate) => {
     const { appointments } = this.state.currentUser
     this.setState({ currentUser: {
