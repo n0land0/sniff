@@ -1,15 +1,19 @@
-import React from 'react'
+import React, { Component } from 'react'
 import { Route, Switch, Link, Redirect } from 'react-router-dom'
 import './App.css'
-import Profile from '../Profile/Profile'
 
+import Nav from '../Nav/Nav'
 import Gallery from '../Gallery/Gallery'
+import Profile from '../Profile/Profile'
+import Dashboard from '../Dashboard/Dashboard'
 
 import userData from '../userData'
 
-class App extends React.Component {
+class App extends Component {
   state = {
-    currentUser: {},
+    currentUser: {
+      appointments: []
+    },
     users: []
   }
 
@@ -18,13 +22,13 @@ class App extends React.Component {
     this.setState({ currentUser: userData[1], users: userData })
   }
 
-  // addPlaydateForCurrentUser = (newPlaydate) => {
-  //   const { appointments } = this.state.currentUser
-  //   this.setState({ currentUser: {
-  //     ...currentUser,
-  //     appointments: [...appointments, newPlaydate]
-  //   }})
-  // }
+  addPlaydateForCurrentUser = (newPlaydate) => {
+    const { appointments } = this.state.currentUser
+    this.setState({ currentUser: {
+      ...this.state.currentUser,
+      appointments: [...appointments, newPlaydate]
+    }})
+  }
 
   // findUser = (users, userId) => {
   //   const selectedProfile = this.findUser(users, match.params.id,)
@@ -38,16 +42,25 @@ class App extends React.Component {
   render() {
     const { currentUser, users } = this.state
     const filteredUsers = users.filter(user => user.id !== currentUser.id)
-    return (
-      <main>
 
-        <Route path='/findfriends' render={ () =>
+    return (
+      <>
+      <Nav />
+      <main>
+        <Route exact path='/dashboard' render={ () =>
+          <Dashboard appointments={currentUser.appointments} users={filteredUsers}/>
+        } />
+        <Route exact path='/findfriends' render={ () =>
           <Gallery users={filteredUsers}/>
         } />
         <Route path='/profile/:userId' render={ ({ match }) =>
-          <Profile id={match.params.userId}/>
+          <Profile
+            currentUserId={currentUser.id}
+            selectedUserId={+match.params.userId} addPlaydateForCurrentUser={this.addPlaydateForCurrentUser}
+          />
         } />
       </main>
+      </>
     )
   }
 }

@@ -17,7 +17,20 @@ const userData = [
     profilePic: 'https://i.imgur.com/LRoLTlK.jpeg',
     dogBreed: 'Labrador',
     bio: lorem,
-    appointments: []
+    appointments: [
+      {
+        date: '2021-11-02',
+        id: 1635662137907,
+        location: 'Cherry Creek Dog Park',
+        usersInvolved: [2, 3]
+      },
+      {
+        date: '2021-09-29',
+        id: 1635662144859,
+        location: 'Greenway Dog Park',
+        usersInvolved: [2, 5]
+      }
+    ]
   },
   {
     id: 3,
