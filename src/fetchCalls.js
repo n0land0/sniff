@@ -2,13 +2,29 @@ const fetchCalls = {
   getUsers() {
     return fetch('url')
       .then(response => {
-        this.checkResponse()
+        this.checkResponse(response)
         return response.json()
       })
       .then(data => data.users)
       .catch(error => {
         console.error(error)
         return error.message
+      })
+  },
+
+  getUser(userId) {
+    return fetch(`http://localhost:3001/api/v1/users/${userId}`)
+      .then(response => {
+        this.checkResponse(response)
+        return response.json()
+      })
+  },
+
+  getDetailedAppointments(userId) {
+    return fetch(`http://localhost:3001/api/v1/playdates${userId}`)
+      .then(response => {
+        this.checkResponse(response)
+        return response.json()
       })
   },
 
@@ -20,10 +36,11 @@ const fetchCalls = {
       },
       body: JSON.stringify(newPlaydate)
     })
+    .then(response => {
+      this.checkResponse(response)
+      return response.json()
+    })
   },
-  // modifyAppointments = () => {}
-
-  // ? getAppointments ?
 
   checkResponse(response) {
     if (!response.ok) {
@@ -39,6 +56,5 @@ const fetchCalls = {
     }
   }
 }
-
 
 export default fetchCalls

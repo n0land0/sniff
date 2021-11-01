@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { Route, Switch, Link, Redirect } from 'react-router-dom'
 
-
 import parksData from '../parksData'
+import fetchCalls from '../fetchCalls'
 
 class PlaydateForm extends Component {
   state = {
@@ -12,7 +12,6 @@ class PlaydateForm extends Component {
   }
 
   componentDidMount = () => {
-    // fetch
     this.setState({ parks: parksData })
   }
 
@@ -26,11 +25,21 @@ class PlaydateForm extends Component {
     const { date, location } = this.state
     const { currentUserId, selectedUserId, addPlaydateForSelectedUser } = this.props
     const usersInvolved = [ currentUserId, selectedUserId ]
-    const newPlaydate = {
-      id: Date.now(),
-      date, location, usersInvolved
-    }
-    addPlaydateForSelectedUser(newPlaydate)
+    const playdateId = Date.now()
+    const playdates = usersInvolved.map(id => {
+      return {
+        id: playdateId,
+        userId: id,
+        playmate: usersInvolved.find(userId => userId !== id),
+        date, location,
+      }
+    })
+    // const newPlaydate = {
+    //   id: Date.now(),
+    //   date, location, usersInvolved
+    // }
+
+    fetchCalls.postAppointment(playdates)
     this.clearInputs()
   }
 

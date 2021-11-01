@@ -19,9 +19,8 @@ class App extends Component {
   }
 
   componentDidMount() {
-    // fetch
+    // fetchCalls.getDetailedAppointments()
     this.setState({ currentUser: userData[1], users: userData })
-    fetchCalls.postAppointment().then(resp => console.log(resp.json()))
   }
 
   addPlaydateForCurrentUser = (newPlaydate) => {
