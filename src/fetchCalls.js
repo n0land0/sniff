@@ -1,5 +1,5 @@
 const fetchCalls = {
-  getUsers = () => {
+  getUsers() {
     return fetch('url')
       .then(response => {
         this.checkResponse()
@@ -12,11 +12,20 @@ const fetchCalls = {
       })
   },
 
+  postAppointment(newPlaydate) {
+    return fetch('http://localhost:3001/api/v1/playdates', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(newPlaydate)
+    })
+  },
   // modifyAppointments = () => {}
 
   // ? getAppointments ?
 
-  checkResponse = () => {
+  checkResponse(response) {
     if (!response.ok) {
       if (response.status === 422 || response.status === 403) {
         throw new Error()
@@ -30,5 +39,6 @@ const fetchCalls = {
     }
   }
 }
+
 
 export default fetchCalls

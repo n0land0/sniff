@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Route, Switch, Link, Redirect } from 'react-router-dom'
 import './App.css'
+import fetchCalls from '../fetchCalls'
 
 import Nav from '../Nav/Nav'
 import Gallery from '../Gallery/Gallery'
@@ -20,6 +21,7 @@ class App extends Component {
   componentDidMount() {
     // fetch
     this.setState({ currentUser: userData[1], users: userData })
+    fetchCalls.postAppointment().then(resp => console.log(resp.json()))
   }
 
   addPlaydateForCurrentUser = (newPlaydate) => {
