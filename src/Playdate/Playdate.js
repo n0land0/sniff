@@ -6,11 +6,14 @@ import './Playdate.css'
 const Playdate = ({ id, date, location, userToMeet }) => {
   const { ownerName, dogName, dogBreed } = userToMeet
 
+  // cancel button - post both users' appts, trigger app CDU
+
   return (
     <article className='playdate'>
       <p>{date}</p>
       <p>{location}</p>
       <p>{ownerName} and {dogName} the {dogBreed}</p>
+      <button>Cancel</button>
     </article>
   )
 }

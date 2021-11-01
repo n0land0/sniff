@@ -19,6 +19,7 @@ const Dashboard = ({ appointments, users }) => {
       <section>
       </section>
       <section>
+        <h2>Playdates</h2>
         {playdates}
       </section>
     </>
