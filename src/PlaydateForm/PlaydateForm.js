@@ -23,7 +23,7 @@ class PlaydateForm extends Component {
   handleSubmit = (event) => {
     event.preventDefault()
     const { date, location } = this.state
-    const { currentUserId, selectedUserId, addPlaydateForSelectedUser } = this.props
+    const { currentUserId, selectedUserId, addPlaydateForSelectedUser, updateProfile } = this.props
     const usersInvolved = [ currentUserId, selectedUserId ]
     const playdateId = Date.now()
     const playdates = usersInvolved.map(id => {
@@ -40,6 +40,7 @@ class PlaydateForm extends Component {
     // }
 
     fetchCalls.postAppointment(playdates)
+    updateProfile()
     this.clearInputs()
   }
 

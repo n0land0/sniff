@@ -1,6 +1,6 @@
 const fetchCalls = {
   getUsers() {
-    return fetch('url')
+    return fetch('http://localhost:3001/api/v1/users')
       .then(response => {
         this.checkResponse(response)
         return response.json()
@@ -28,13 +28,14 @@ const fetchCalls = {
       })
   },
 
-  postAppointment(newPlaydate) {
-    return fetch('http://localhost:3001/api/v1/playdates', {
+  postAppointment(newPlaydates) {
+    // return fetch('http://localhost:3001/api/v1/playdates', {
+    return fetch('http://localhost:3001/dummy/playdates', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify(newPlaydate)
+      body: JSON.stringify(newPlaydates)
     })
     .then(response => {
       this.checkResponse(response)

@@ -12,9 +12,9 @@ import './Profile.css'
 class Profile extends Component {
   state = {
     id: 0,
-    ownerName: '',
-    dogName: '',
-    profilePic: '',
+    owner_name: '',
+    dog_name: '',
+    profile_pic: '',
     bio: '',
     appointments: []
   }
@@ -22,8 +22,10 @@ class Profile extends Component {
   componentDidMount = () => {
     // fetch
     // const selectedProfile = userData.find(user => user.id === +this.props.selectedUserId)
-    fetchCalls.getUser(+this.props.selectedUserId)
-      .then((response) => this.setState({...response}))
+
+    // fetchCalls.getUser(+this.props.selectedUserId)
+    //   .then((response) => this.setState({...response}))
+    this.updateProfile()
   }
 
   addPlaydateForSelectedUser = (newPlaydate) => {
@@ -35,18 +37,23 @@ class Profile extends Component {
     this.props.addPlaydateForCurrentUser(newPlaydate)
   }
 
+  updateProfile = () => {
+    fetchCalls.getUser(+this.props.selectedUserId)
+      .then((response) => this.setState({...response}))
+  }
+
   render() {
     const { currentUserId, selectedUserId, addPlaydateForCurrentUser } = this.props
-    const { ownerName, dogName, profilePic, bio, appointments } = this.state
+    const { owner_name, dog_name, profile_pic, bio, appointments } = this.state
     const playdateReminder = appointments.find(appt => {
-      return appt.playmate === currentUserId
+      return appt.playmate.id === currentUserId
     })
 
     return (
       <section className='profile'>
-        <img src={profilePic} />
-        <p>Owner's Name: {ownerName}</p>
-        <p>Dog's Name: {dogName}</p>
+        <img src={profile_pic} />
+        <p>Owner's Name: {owner_name}</p>
+        <p>Dog's Name: {dog_name}</p>
         <p>Bio: {bio}</p>
         {playdateReminder ?
           <p>You have a playdate scheduled on {playdateReminder.date} at {playdateReminder.location}.</p> :
@@ -54,6 +61,7 @@ class Profile extends Component {
             currentUserId={currentUserId}
             selectedUserId={selectedUserId}
             addPlaydateForSelectedUser={this.addPlaydateForSelectedUser}
+            updateProfile={this.updateProfile}
           />
         }
         <Link to='/findfriends'>
