@@ -19,7 +19,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    // fetchCalls.getDetailedAppointments()
+    // fetchCalls.getUser()
     this.setState({ currentUser: userData[1], users: userData })
   }
 

@@ -14,6 +14,8 @@ const Dashboard = ({ appointments, users }) => {
   //   return <Playdate key={appt.id} {...appt}/>
   // })
 
+  // fetch user when App mounts, pass in appts, iterate and return Playdate components
+
   return (
     <>
       <section>
