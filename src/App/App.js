@@ -40,7 +40,7 @@ class App extends Component {
       <>
       <Nav />
       <main>
-        <Route exact path='/dashboard' render={ () =>
+        <Route exact path='/' render={ () =>
           <Dashboard appointments={currentUser.appointments} users={filteredUsers}/>
         } />
         <Route exact path='/findfriends' render={ () =>
