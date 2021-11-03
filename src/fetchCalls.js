@@ -6,7 +6,7 @@ const fetchCalls = {
         this.checkResponse(response)
         return response.json()
       })
-      .then(data => data.users)
+      // .then(data => data.users)
       .catch(error => {
         console.error(error)
         return error.message
