@@ -1,6 +1,7 @@
 const fetchCalls = {
   getUsers() {
-    return fetch('http://localhost:3001/api/v1/users')
+    // return fetch('http://localhost:3001/api/v1/users')
+    return fetch('https://sniff-api.herokuapp.com/api/v1/users')
       .then(response => {
         this.checkResponse(response)
         return response.json()
@@ -13,7 +14,8 @@ const fetchCalls = {
   },
 
   getUser(userId) {
-    return fetch(`http://localhost:3001/api/v1/users/${userId}`)
+    // return fetch(`http://localhost:3001/api/v1/users/${userId}`)
+    return fetch(`https://sniff-api.herokuapp.com/api/v1/users/${userId}`)
       .then(response => {
         this.checkResponse(response)
         return response.json()
@@ -21,7 +23,8 @@ const fetchCalls = {
   },
 
   getDetailedAppointments(userId) {
-    return fetch(`http://localhost:3001/api/v1/playdates${userId}`)
+    // return fetch(`http://localhost:3001/api/v1/playdates${userId}`)
+    return fetch(`https://sniff-api.herokuapp.com/api/v1/playdates${userId}`)
       .then(response => {
         this.checkResponse(response)
         return response.json()
@@ -30,7 +33,7 @@ const fetchCalls = {
 
   postAppointment(newPlaydates) {
     // return fetch('http://localhost:3001/api/v1/playdates', {
-    return fetch('http://localhost:3001/dummy/playdates', {
+    return fetch('https://sniff-api.herokuapp.com/api/v1/playdates', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
