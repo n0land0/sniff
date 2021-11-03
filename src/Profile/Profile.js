@@ -23,7 +23,7 @@ class Profile extends Component {
     // fetch
     // const selectedProfile = userData.find(user => user.id === +this.props.selectedUserId)
 
-    // fetchCalls.getUser(+this.props.selectedUserId)
+    // fetchCalls.getSingleUser(+this.props.selectedUserId)
     //   .then((response) => this.setState({...response}))
     this.updateProfile()
   }
@@ -38,7 +38,7 @@ class Profile extends Component {
   }
 
   updateProfile = () => {
-    fetchCalls.getUser(+this.props.selectedUserId)
+    fetchCalls.getSingleUser(+this.props.selectedUserId)
       .then((response) => this.setState({...response}))
   }
 

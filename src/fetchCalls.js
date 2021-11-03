@@ -13,7 +13,7 @@ const fetchCalls = {
       })
   },
 
-  getUser(userId) {
+  getSingleUser(userId) {
     // return fetch(`http://localhost:3001/api/v1/users/${userId}`)
     return fetch(`https://sniff-api.herokuapp.com/api/v1/users/${userId}`)
       .then(response => {
