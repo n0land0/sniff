@@ -19,8 +19,14 @@ class App extends Component {
   }
 
   componentDidMount() {
-    // fetchCalls.getSingleUser()
-    this.setState({ currentUser: userData[1], users: userData })
+    // this.setState({ currentUser: userData[1], users: userData })
+    Promise.all([fetchCalls.getSingleUser(2), fetchCalls.getUsers()])
+    .then(([user, allUsers]) => {
+      console.log(user)
+      console.log(allUsers)
+      this.setState({ currentUser: {...user}, users: allUsers })
+    })
+
   }
 
   addPlaydateForCurrentUser = (newPlaydate) => {
