@@ -19,30 +19,16 @@ class App extends Component {
   }
 
   componentDidMount() {
-    // this.setState({ currentUser: userData[1], users: userData })
+    this.updateCurrentUser()
+  }
+
+  updateCurrentUser = () => {
     Promise.all([fetchCalls.getSingleUser(2), fetchCalls.getUsers()])
     .then(([user, allUsers]) => {
-      console.log(user)
-      console.log(allUsers)
       this.setState({ currentUser: {...user}, users: allUsers })
     })
-
+    .then(() => console.log('current user', this.state.currentUser))
   }
-
-  addPlaydateForCurrentUser = (newPlaydate) => {
-    const { appointments } = this.state.currentUser
-    this.setState({ currentUser: {
-      ...this.state.currentUser,
-      appointments: [...appointments, newPlaydate]
-    }})
-  }
-
-  // findUser = (users, userId) => {
-  //   const selectedProfile = this.findUser(users, match.params.id,)
-  //
-  //   return users.find(user => user.id === userId);
-  // }
-
 
 // should PlaydateForm be a sibling of Profile?
   // ...if currentUser playdates need to be added to App state
@@ -63,7 +49,8 @@ class App extends Component {
         <Route path='/profile/:userId' render={ ({ match }) =>
           <Profile
             currentUserId={currentUser.id}
-            selectedUserId={+match.params.userId} addPlaydateForCurrentUser={this.addPlaydateForCurrentUser}
+            selectedUserId={+match.params.userId}
+            updateCurrentUser={this.updateCurrentUser}
           />
         } />
       </main>

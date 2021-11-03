@@ -20,30 +20,17 @@ class Profile extends Component {
   }
 
   componentDidMount = () => {
-    // fetch
-    // const selectedProfile = userData.find(user => user.id === +this.props.selectedUserId)
-
-    // fetchCalls.getSingleUser(+this.props.selectedUserId)
-    //   .then((response) => this.setState({...response}))
     this.updateProfile()
-  }
-
-  addPlaydateForSelectedUser = (newPlaydate) => {
-    const { appointments } = this.state
-    // const { currentUserId, selectedUserId, addPlaydateForCurrentUser } = this.props
-    // fetch (POST) new playdate for selected profile & current user
-    // fetch (GET) updated appointments for selected profile & current user
-    this.setState({ appointments: [...appointments, newPlaydate]})
-    this.props.addPlaydateForCurrentUser(newPlaydate)
   }
 
   updateProfile = () => {
     fetchCalls.getSingleUser(+this.props.selectedUserId)
       .then((response) => this.setState({...response}))
+      .then(() => console.log('profile', this.state))
   }
 
   render() {
-    const { currentUserId, selectedUserId, addPlaydateForCurrentUser } = this.props
+    const { currentUserId, selectedUserId, updateCurrentUser } = this.props
     const { owner_name, dog_name, profile_pic, bio, appointments } = this.state
     const playdateReminder = appointments.find(appt => {
       return appt.playmate.id === currentUserId
@@ -60,8 +47,8 @@ class Profile extends Component {
           <PlaydateForm
             currentUserId={currentUserId}
             selectedUserId={selectedUserId}
-            addPlaydateForSelectedUser={this.addPlaydateForSelectedUser}
             updateProfile={this.updateProfile}
+            updateCurrentUser={updateCurrentUser}
           />
         }
         <Link to='/findfriends'>
