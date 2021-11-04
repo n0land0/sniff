@@ -10,9 +10,9 @@ const Playdate = ({ id, date, location, playmate }) => {
 
   return (
     <article className='playdate'>
-      <p>{date}</p>
-      <p>{location}</p>
-      <p>{ownerName} and {dogName}</p>
+      <p>Date: {date}</p>
+      <p>Location: {location}</p>
+      <p>With {ownerName} and {dogName}</p>
       <button>Cancel</button>
     </article>
   )

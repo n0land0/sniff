@@ -106,7 +106,8 @@ describe('Landing Page', () => {
     }).visit('http://localhost:3000/')
   })
 
-  it('should display upcoming playdates', {
-    
+  it('should display upcoming playdates',() => {
+    cy.get('.playdates-container>article').eq(1)
+      .should('exist')
   })
 })

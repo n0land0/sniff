@@ -25,17 +25,6 @@ describe('Profile Page View', () => {
   })
 
   it('should display a newly made booking', () => {
-    cy.get('input[type="date"]')
-      .type('2021-12-21')
-
-    cy.get('select')
-      .select('Fuller Dog Park')
-
-    cy.get('form')
-      .find('button')
-      .click()
-
-    cy.intercept('https://sniff-api.herokuapp.com/api/v1/playdates')
     cy.intercept('https://sniff-api.herokuapp.com/api/v1/users/2', {
       id: 2,
       owner_name: 'Joshua',
@@ -78,6 +67,17 @@ describe('Profile Page View', () => {
         }
       ]
     })
+    cy.get('input[type="date"]')
+      .type('2021-12-21')
+
+    cy.get('select')
+      .select('Fuller Dog Park')
+
+    cy.get('form')
+      .find('button')
+      .click()
+
+    cy.intercept('POST', 'https://sniff-api.herokuapp.com/api/v1/playdates')
 
     cy.get('.profile')
       .should('include.text', 'You have a playdate scheduled on 2021-12-21 at Fuller Dog Park.')

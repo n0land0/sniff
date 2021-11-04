@@ -22,7 +22,7 @@ const Dashboard = ({ appointments, users }) => {
     <>
       <section>
       </section>
-      <section>
+      <section className='playdates-container'>
         <h2>Playdates</h2>
         {playdates}
       </section>
