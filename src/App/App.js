@@ -24,10 +24,9 @@ class App extends Component {
 
   updateCurrentUser = () => {
     Promise.all([fetchCalls.getSingleUser(2), fetchCalls.getUsers()])
-    .then(([user, allUsers]) => {
-      this.setState({ currentUser: {...user}, users: allUsers })
+      .then(([user, allUsers]) => {
+        this.setState({ currentUser: {...user}, users: allUsers })
     })
-    .then(() => console.log('current user', this.state.currentUser))
   }
 
 // should PlaydateForm be a sibling of Profile?

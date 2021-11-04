@@ -26,7 +26,6 @@ class Profile extends Component {
   updateProfile = () => {
     fetchCalls.getSingleUser(+this.props.selectedUserId)
       .then((response) => this.setState({...response}))
-      .then(() => console.log('profile', this.state))
   }
 
   render() {
@@ -52,7 +51,7 @@ class Profile extends Component {
           />
         }
         <Link to='/findfriends'>
-          <button>Find more friends</button>
+          <button className="find-friends-btn">Find more friends</button>
         </Link>
       </section>
     )
