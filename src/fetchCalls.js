@@ -42,7 +42,6 @@ const fetchCalls = {
     })
     .then(response => {
       this.checkResponse(response)
-      console.log(response)
       return response.json()
     })
   },
