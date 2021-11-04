@@ -82,4 +82,9 @@ describe('Profile Page View', () => {
     cy.get('.profile')
       .should('include.text', 'You have a playdate scheduled on 2021-12-21 at Fuller Dog Park.')
   })
+
+  it('should be able to go back to gallery from the profile', () => {
+    cy.get('.find-friends-btn').click()
+    cy.get('.gallery').url().should('include', '/findfriends')
+  })
 })
