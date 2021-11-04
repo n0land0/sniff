@@ -3,8 +3,8 @@ import { Route, Switch, Link, Redirect } from 'react-router-dom'
 
 import './Playdate.css'
 
-const Playdate = ({ id, date, location, userToMeet }) => {
-  const { ownerName, dogName, dogBreed } = userToMeet
+const Playdate = ({ id, date, location, playmate }) => {
+  const { ownerName, dogName } = playmate
 
   // cancel button - post both users' appts, trigger app CDU
 
@@ -12,7 +12,7 @@ const Playdate = ({ id, date, location, userToMeet }) => {
     <article className='playdate'>
       <p>{date}</p>
       <p>{location}</p>
-      <p>{ownerName} and {dogName} the {dogBreed}</p>
+      <p>{ownerName} and {dogName}</p>
       <button>Cancel</button>
     </article>
   )

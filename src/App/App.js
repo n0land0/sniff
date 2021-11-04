@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Route, Switch, Link, Redirect } from 'react-router-dom'
 import './App.css'
+import fetchCalls from '../fetchCalls'
 
 import Nav from '../Nav/Nav'
 import Gallery from '../Gallery/Gallery'
@@ -18,29 +19,16 @@ class App extends Component {
   }
 
   componentDidMount() {
-    // fetch
-    this.setState({ currentUser: userData[1], users: userData })
+    this.updateCurrentUser()
   }
 
-  // componentDidUpdate() {
-  //   // fetch
-  //   this.setState({ currentUser: userData[1], users: userData })
-  // }
-
-  addPlaydateForCurrentUser = (newPlaydate) => {
-    const { appointments } = this.state.currentUser
-    this.setState({ currentUser: {
-      ...this.state.currentUser,
-      appointments: [...appointments, newPlaydate]
-    }})
+  updateCurrentUser = () => {
+    Promise.all([fetchCalls.getSingleUser(2), fetchCalls.getUsers()])
+    .then(([user, allUsers]) => {
+      this.setState({ currentUser: {...user}, users: allUsers })
+    })
+    .then(() => console.log('current user', this.state.currentUser))
   }
-
-  // findUser = (users, userId) => {
-  //   const selectedProfile = this.findUser(users, match.params.id,)
-  //
-  //   return users.find(user => user.id === userId);
-  // }
-
 
 // should PlaydateForm be a sibling of Profile?
   // ...if currentUser playdates need to be added to App state
@@ -52,7 +40,7 @@ class App extends Component {
       <>
       <Nav />
       <main>
-        <Route exact path='/dashboard' render={ () =>
+        <Route exact path='/' render={ () =>
           <Dashboard appointments={currentUser.appointments} users={filteredUsers}/>
         } />
         <Route exact path='/findfriends' render={ () =>
@@ -61,7 +49,8 @@ class App extends Component {
         <Route path='/profile/:userId' render={ ({ match }) =>
           <Profile
             currentUserId={currentUser.id}
-            selectedUserId={+match.params.userId} addPlaydateForCurrentUser={this.addPlaydateForCurrentUser}
+            selectedUserId={+match.params.userId}
+            updateCurrentUser={this.updateCurrentUser}
           />
         } />
       </main>
