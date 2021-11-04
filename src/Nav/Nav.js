@@ -6,7 +6,7 @@ const Nav = () => {
 
   return (
     <nav>
-      <NavLink exact to='/dashboard' activeClassName='active'>
+      <NavLink exact to='/' activeClassName='active'>
         Home
       </NavLink>
       <NavLink exact to='/findfriends' activeClassName='active'>

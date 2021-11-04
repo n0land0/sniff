@@ -3,14 +3,14 @@ import { Route, Switch, Link, Redirect } from 'react-router-dom'
 
 import './Card.css'
 
-const Card = ({ id, ownerName, dogName, profilePic, dogBreed }) => {
+const Card = ({ id, owner_name, dog_name, profile_pic, dog_breed }) => {
 
   return (
     <Link to={`/profile/${id}`}>
       <article className='profile-card'>
-        <img src={profilePic} />
-        <h3>{dogName} & {ownerName}</h3>
-        <p>{dogBreed}</p>
+        <img src={profile_pic} />
+        <h3>{dog_name} & {owner_name}</h3>
+        <p>{dog_breed}</p>
       </article>
     </Link>
   )
