@@ -4,6 +4,7 @@
   align-items: center;
   width: 100%;
   text-align: center;
+  position: fixed;
 }
 
 .header__user-photo-username {
