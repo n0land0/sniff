@@ -3,7 +3,8 @@ import { Route, Switch, Link, Redirect } from 'react-router-dom'
 import './App.css'
 import fetchCalls from '../fetchCalls'
 
-import Nav from '../Nav/Nav'
+// import Nav from '../Nav/Nav'
+import Header from '../Header/Header'
 import Gallery from '../Gallery/Gallery'
 import Profile from '../Profile/Profile'
 import Dashboard from '../Dashboard/Dashboard'
@@ -37,7 +38,7 @@ class App extends Component {
 
     return (
       <>
-      <Nav />
+      <Header />
       <main>
         <Route exact path='/' render={ () =>
           <Dashboard appointments={currentUser.appointments} users={filteredUsers}/>

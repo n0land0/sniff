@@ -1,3 +1,16 @@
+.navbar__tab {
+  padding: 1rem;
+  background-color: gray;
+  color: orange;
+  border-radius: 10px 10px 0 0;
+  cursor: pointer;
+}
+
+.navbar__tab:hover {
+  transform: scale(1.025);
+}
+
 .active {
-  text-decoration: underline;
+  background-color: green;
+  color: white;
 }

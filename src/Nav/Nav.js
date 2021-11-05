@@ -5,11 +5,19 @@ import './Nav.css'
 const Nav = () => {
 
   return (
-    <nav>
-      <NavLink exact to='/' activeClassName='active'>
+    <nav className='navbar'>
+      <NavLink
+        exact to='/'
+        className='navbar__tab'
+        activeClassName='active'
+      >
         Home
       </NavLink>
-      <NavLink exact to='/findfriends' activeClassName='active'>
+      <NavLink
+        exact to='/findfriends'
+        className='navbar__tab'
+        activeClassName='active'
+      >
         Find Friends
       </NavLink>
     </nav>
