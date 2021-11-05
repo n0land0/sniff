@@ -1,7 +1,10 @@
 .navbar {
   display: flex;
+  align-self: flex-end;
   /* width: 7rem; */
-  height: 7rem;
+  height: 5rem;
+  position: fixed;
+  right: 0;
 }
 
 .navbar__tab {

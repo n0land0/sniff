@@ -15,9 +15,24 @@ const Dashboard = ({ appointments, users }) => {
     <>
       <section>
       </section>
+      <h2>Playdates</h2>
       <section className='playdates-container'>
-        <h2>Playdates</h2>
-        {playdates}
+        <button
+            id="slideLeft"
+            type="button"
+            onClick={() =>
+              document.querySelector('.playdates-container__playdates').scrollLeft -= 200
+            }>˂</button>
+        <div className='playdates-container__playdates'>
+          {playdates}
+        </div>
+        <button
+          id="slideRight"
+          type="button"
+          onClick={() =>
+            document.querySelector('.playdates-container__playdates').scrollLeft += 200
+          }
+        >˃</button>
       </section>
     </>
   )

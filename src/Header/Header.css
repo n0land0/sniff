@@ -1,9 +1,14 @@
 .header {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   width: 100%;
   text-align: center;
+}
+
+.header__user-photo-username {
+  position: fixed;
+  left: 0;
 }
 
 .header__user-photo {
@@ -17,10 +22,12 @@
 }
 
 .title {
+  width: 100%;
   font-size: 2rem;
 }
 
 .header__logo {
+  width: 100%;
   display: flex;
   align-items: center;
   width: 7rem;
@@ -29,4 +36,8 @@
   background-size: cover;
   background-repeat: no-repeat;
   text-align: center;
+}
+
+.header__tagline {
+  width: 100%;
 }
