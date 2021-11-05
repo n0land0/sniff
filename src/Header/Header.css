@@ -1,10 +1,32 @@
 .header {
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
+  align-items: center;
   width: 100%;
+  text-align: center;
+}
+
+.header__user-photo {
+  width: 7rem;
+  height: 7rem;
+  /* background-image: url('https://i.imgur.com/5gC7saF.jpeg'); */
+  /* background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center; */
+  border-radius: 100%;
 }
 
 .title {
   font-size: 2rem;
+}
+
+.header__logo {
+  display: flex;
+  align-items: center;
+  width: 7rem;
+  height: 7rem;
+  background-image: url('https://images.wikia.com/nintendo/en/images/3/3e/MTO_Tennis_Ball.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  text-align: center;
 }
