@@ -15,7 +15,7 @@ const Header = () => {
         <div className='header__logo'>
           <h1 className='title'>snïff.</h1>
         </div>
-        <h3 className='header__tagline'>wag. play. fetch.</h3>
+        <h3 className='header__tagline'>wag. fetch. play.</h3>
       </article>
       <Nav />
     </header>

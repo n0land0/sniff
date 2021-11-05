@@ -21,7 +21,7 @@ const Dashboard = ({ appointments, users }) => {
             id="slideLeft"
             type="button"
             onClick={() =>
-              document.querySelector('.playdates-container__playdates').scrollLeft -= 200
+              document.querySelector('.playdates-container__playdates').scrollLeft -= 309
             }>˂</button>
         <div className='playdates-container__playdates'>
           {playdates}
@@ -30,7 +30,7 @@ const Dashboard = ({ appointments, users }) => {
           id="slideRight"
           type="button"
           onClick={() =>
-            document.querySelector('.playdates-container__playdates').scrollLeft += 200
+            document.querySelector('.playdates-container__playdates').scrollLeft += 309
           }
         >˃</button>
       </section>

@@ -5,6 +5,7 @@
   width: 100%;
   text-align: center;
   position: fixed;
+  background-color: white;
 }
 
 .header__user-photo-username {

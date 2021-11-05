@@ -3,16 +3,23 @@ import { Route, Switch, Link, Redirect } from 'react-router-dom'
 
 import './Playdate.css'
 
-const Playdate = ({ id, date, location, playmate }) => {
-  const { ownerName, dogName } = playmate
+import dayjs from 'dayjs'
+
+const Playdate = ({ date, location, playmate }) => {
+  const { ownerName, dogName, id } = playmate
+  date = dayjs(date).format('ddd MMM D, YYYY')
 
   // cancel button - post both users' appts, trigger app CDU
 
   return (
-    <article className='playdate'>
-      <p>Date: {date}</p>
-      <p>Location: {location}</p>
-      <p>With {ownerName} and {dogName}</p>
+    <article className='playdate' style={{backgroundImage: `url(${playmate.profile_pic})` }}>
+      <p>on {date}</p>
+      <p>at {location}</p>
+      <p>with
+        <Link to={`/profile/${id}`}>
+          {" " + ownerName} and {dogName}
+        </Link>
+      </p>
       <button>Cancel</button>
     </article>
   )

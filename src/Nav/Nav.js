@@ -11,14 +11,14 @@ const Nav = () => {
         className='navbar__tab'
         activeClassName='active'
       >
-        Home
+        home
       </NavLink>
       <NavLink
         exact to='/findfriends'
         className='navbar__tab'
         activeClassName='active'
       >
-        Find Friends
+        find friends
       </NavLink>
     </nav>
   )
