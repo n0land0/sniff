@@ -1,10 +1,10 @@
+@import './src/_mixins.scss';
+
 .header {
-  display: flex;
+  @include flex-align-text();
   justify-content: center;
-  align-items: center;
-  width: 100%;
-  text-align: center;
   position: fixed;
+  width: 100%;
   background-color: #FCFCE8;
   font-family: 'Dongle', sans-serif;
 }
@@ -15,13 +15,9 @@
 }
 
 .header__user-photo {
-  width: 4rem;
   height: 4rem;
+  width: 4rem;
   margin-left: 20px;
-  /* background-image: url('https://i.imgur.com/5gC7saF.jpeg'); */
-  /* background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center; */
   border-radius: 100%;
 }
 
@@ -31,26 +27,24 @@
 }
 
 .header__logo {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  width: 7rem;
+  @include flex-align-text();
   height: 7rem;
+  width: 7rem;
   background-image: url('https://images.wikia.com/nintendo/en/images/3/3e/MTO_Tennis_Ball.png');
   background-size: cover;
   background-repeat: no-repeat;
-  text-align: center;
   font-family: 'Dongle', sans-serif;
+  cursor: default;
 }
 
 .header__tagline {
   width: 100%;
   font-size: 1.2rem;
+  cursor: default;
 }
 
 .header__username {
+  margin-top: -5px;
   margin-left: 19px;
   font-size: 14px;
-  margin-top: -5px;
-
 }

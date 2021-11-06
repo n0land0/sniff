@@ -1,44 +1,33 @@
+@import './src/_mixins.scss';
+
 main {
+  @include height-width(100%, 100%);
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 100%;
-  height: 100%;
   text-align: center;
   background-color: #ACD8AA;
 }
 
 .dog-one {
-  height: 50rem;
-  width: 33rem;
-  opacity: 8%;
-  position: absolute;
-  z-index: 1;
+  @include height-width(50rem, 33rem);
+  @include pos-zindex-opa(8%);
 }
 
 .dog-two {
-  height: 16rem;
-  width: 34rem;
+  @include height-width(16rem, 34rem);
+  @include pos-zindex-opa(8%);
   margin: -105px 0px 0px 717px;
-  opacity: 8%;
-  position: absolute;
-  z-index: 1;
 }
 
 .dog-three {
-  height: 24rem;
-  width: 37rem;
+  @include height-width(24rem, 37rem);
+  @include pos-zindex-opa(8%);
   margin: 183px 0px 0px 898px;
-  opacity: 8%;
-  position: absolute;
-  z-index: 1;
 }
 
 .dog-four {
-  height: 12rem;
-  width: 17rem;
+  @include height-width(12rem, 17rem);
+  @include pos-zindex-opa(6%);
   margin: 233px 0px 0px 599px;
-  opacity: 6%;
-  position: absolute;
-  z-index: 1;
 }

@@ -1,9 +1,8 @@
 .navbar {
   display: flex;
-  align-self: flex-end;
-  /* width: 7rem; */
-  height: 5rem;
   position: fixed;
+  align-self: flex-end;
+  height: 5rem;
   right: 0;
 }
 
@@ -11,25 +10,18 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 7rem;
   height: 100%;
-  /* padding: 1rem; */
-  background-color: gray;
-  color: white;
-  font-size: 1.9rem;
-  border-radius: 10px 10px 0 0;
-  cursor: pointer;
-  /* transition: all 0.3s ease-in-out; */
-  font-family: 'Dongle', sans-serif;
+  width: 7rem;
   background-color: #F48498;
+  border-radius: 10px 10px 0 0;
+  font-family: 'Dongle', sans-serif;
+  font-size: 1.9rem;
+  color: white;
+  cursor: pointer;
 }
 
-/* .navbar__tab:hover {
-  font-size: 1.05rem;
-} */
-
 .active {
+  text-decoration: underline;
   background-color: #ACD8AA;
   color: #F4627C;
-  text-decoration: underline;
 }
