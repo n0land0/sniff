@@ -5,7 +5,8 @@
   width: 100%;
   text-align: center;
   position: fixed;
-  background-color: white;
+  background-color: #FCFCE8;
+  font-family: 'Dongle', sans-serif;
 }
 
 .header__user-photo-username {
@@ -14,8 +15,9 @@
 }
 
 .header__user-photo {
-  width: 7rem;
-  height: 7rem;
+  width: 4rem;
+  height: 4rem;
+  margin-left: 20px;
   /* background-image: url('https://i.imgur.com/5gC7saF.jpeg'); */
   /* background-size: cover;
   background-repeat: no-repeat;
@@ -25,7 +27,7 @@
 
 .title {
   width: 100%;
-  font-size: 2rem;
+  font-size: 3.2rem;
 }
 
 .header__logo {
@@ -38,8 +40,17 @@
   background-size: cover;
   background-repeat: no-repeat;
   text-align: center;
+  font-family: 'Dongle', sans-serif;
 }
 
 .header__tagline {
   width: 100%;
+  font-size: 1.2rem;
+}
+
+.header__username {
+  margin-left: 19px;
+  font-size: 14px;
+  margin-top: -5px;
+
 }

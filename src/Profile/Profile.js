@@ -41,7 +41,8 @@ class Profile extends Component {
         <p>Owner's Name: {owner_name}</p>
         <p>Dog's Name: {dog_name}</p>
         <p>Bio: {bio}</p>
-        {playdateReminder ?
+        {
+          playdateReminder ?
           <p>You have a playdate scheduled on {playdateReminder.date} at {playdateReminder.location}.</p> :
           <PlaydateForm
             currentUserId={currentUserId}

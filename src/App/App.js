@@ -10,6 +10,10 @@ import Profile from '../Profile/Profile'
 import Dashboard from '../Dashboard/Dashboard'
 
 import userData from '../userData'
+import img1 from '../Assets/dog-1.png'
+import img2 from '../Assets/dog-2.png'
+import img3 from '../Assets/dog-3.png'
+import img4 from '../Assets/dog-4.png'
 
 class App extends Component {
   state = {
@@ -38,22 +42,26 @@ class App extends Component {
 
     return (
       <>
-      <Header />
-      <main>
-        <Route exact path='/' render={ () =>
-          <Dashboard appointments={currentUser.appointments} users={filteredUsers}/>
-        } />
-        <Route exact path='/findfriends' render={ () =>
-          <Gallery users={filteredUsers}/>
-        } />
-        <Route path='/profile/:userId' render={ ({ match }) =>
-          <Profile
-            currentUserId={currentUser.id}
-            selectedUserId={+match.params.userId}
-            updateCurrentUser={this.updateCurrentUser}
-          />
-        } />
-      </main>
+        <Header />
+        <main>
+          <img className="dog-one" src={img1} />
+          <img className="dog-two" src={img2} />
+          <img className="dog-three" src={img3} />
+          <img className="dog-four" src={img4} />
+          <Route exact path='/' render={ () =>
+            <Dashboard appointments={currentUser.appointments} users={filteredUsers}/>
+          } />
+          <Route exact path='/findfriends' render={ () =>
+            <Gallery users={filteredUsers}/>
+          } />
+          <Route path='/profile/:userId' render={ ({ match }) =>
+            <Profile
+              currentUserId={currentUser.id}
+              selectedUserId={+match.params.userId}
+              updateCurrentUser={this.updateCurrentUser}
+            />
+          } />
+        </main>
       </>
     )
   }

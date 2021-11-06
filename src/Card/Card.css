@@ -9,3 +9,32 @@
   width: 10rem;
   height: 10rem;
 }
+
+.profile-card__image {
+  width: 10rem;
+  height: 10rem;
+  margin-top: -150px;
+  border-radius: 15px 15px 4px 4px;
+  position: fixed;
+  z-index: 2;
+  transition: height .25s ease-out, width .25s ease-out;
+}
+
+.profile-card__image:hover {
+  height: 11rem;
+  width: 11rem;
+  animation: wagthedog .2s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+@keyframes wagthedog {
+  from { transform: rotate(-2.5deg) }
+  to   { transform: rotate(2.5deg) }
+}
+
+.profile-card__card-details {
+  margin-top: 10px;
+  font-family: 'Dongle', sans-serif;
+  font-size: 20px;
+}

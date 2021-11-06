@@ -15,18 +15,21 @@
   height: 100%;
   /* padding: 1rem; */
   background-color: gray;
-  color: orange;
-  font-size: 1rem;
+  color: white;
+  font-size: 1.9rem;
   border-radius: 10px 10px 0 0;
   cursor: pointer;
-  transition: all 0.3s ease-in-out;
+  /* transition: all 0.3s ease-in-out; */
+  font-family: 'Dongle', sans-serif;
+  background-color: #F48498;
 }
 
-.navbar__tab:hover {
+/* .navbar__tab:hover {
   font-size: 1.05rem;
-}
+} */
 
 .active {
-  background-color: green;
-  color: white;
+  background-color: #ACD8AA;
+  color: #F4627C;
+  text-decoration: underline;
 }

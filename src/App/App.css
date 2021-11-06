@@ -7,3 +7,38 @@ main {
   text-align: center;
   background-color: #ACD8AA;
 }
+
+.dog-one {
+  height: 50rem;
+  width: 33rem;
+  opacity: 8%;
+  position: absolute;
+  z-index: 1;
+}
+
+.dog-two {
+  height: 16rem;
+  width: 34rem;
+  margin: -105px 0px 0px 717px;
+  opacity: 8%;
+  position: absolute;
+  z-index: 1;
+}
+
+.dog-three {
+  height: 24rem;
+  width: 37rem;
+  margin: 183px 0px 0px 898px;
+  opacity: 8%;
+  position: absolute;
+  z-index: 1;
+}
+
+.dog-four {
+  height: 12rem;
+  width: 17rem;
+  margin: 233px 0px 0px 599px;
+  opacity: 6%;
+  position: absolute;
+  z-index: 1;
+}
