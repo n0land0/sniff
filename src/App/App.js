@@ -46,7 +46,6 @@ class App extends Component {
         <main>
           <img className="dog-one" src={img1} />
           <img className="dog-two" src={img2} />
-          <img className="dog-three" src={img3} />
           <img className="dog-four" src={img4} />
           <Route exact path='/' render={ () =>
             <Dashboard appointments={currentUser.appointments} users={filteredUsers}/>

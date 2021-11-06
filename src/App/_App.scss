@@ -15,19 +15,13 @@ main {
 }
 
 .dog-two {
-  @include height-width(16rem, 34rem);
+  @include height-width(32rem, 65rem);
   @include pos-zindex-opa(8%);
-  margin: -105px 0px 0px 717px;
-}
-
-.dog-three {
-  @include height-width(24rem, 37rem);
-  @include pos-zindex-opa(8%);
-  margin: 183px 0px 0px 898px;
+  margin: 51px 0px 0px 774px;
 }
 
 .dog-four {
-  @include height-width(12rem, 17rem);
+  @include height-width(5rem, 6rem);
   @include pos-zindex-opa(6%);
-  margin: 233px 0px 0px 599px;
+  margin: 303px 0px 0px 1325px;
 }
