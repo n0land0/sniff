@@ -1,9 +1,21 @@
 const parksData = [
-  'Berkeley Dog Park',
-  'Fuller Dog Park',
-  'Midtown Dog Park',
-  'Cherry Creek Dog Park',
-  'Greenway Dog Park'
+  {
+    id: '1',
+    name: 'Barkeley Dog Park',
+    coords: {
+      lat: 39.78517033021718,
+      lng: -105.0524328185899
+    }
+  },
+  {
+    id: '2',
+    name: 'Barnum Dog Park',
+    coords: {
+      lat: 39.72717036769487,
+      lng: -105.02986465580095
+    }
+  },
+
 ]
 
 export default parksData
