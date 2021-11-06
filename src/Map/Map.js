@@ -2,6 +2,7 @@ import React, { Component, useState, useCallback, useRef } from 'react'
 import { GoogleMap, useLoadScript, LoadScript, Marker, InfoWindow } from '@react-google-maps/api'
 import Search from './Search'
 import Locate from './Locate'
+import ParkMarkers from './ParkMarkers'
 import mapStyles from './mapStyles'
 import dogPark from '../assets/dog-park.svg'
 
@@ -11,8 +12,8 @@ const containerDimensions = {
 }
 
 const center = {
-  lat: 39.74846723935253,
-  lng: -105.04736793135767
+  lat: 39.74121768558487,
+  lng: -104.9915066575683
 }
 
 const options = {
@@ -55,11 +56,12 @@ const Map = () => {
       <GoogleMap
         mapContainerStyle={containerDimensions}
         center={center}
-        zoom={10}
+        zoom={11}
         options={options}
         onClick={onMapClick}
         onLoad={onMapLoad}
       >
+        <ParkMarkers setSelected={setSelected}/>
         {markers.map(marker =>
           <Marker
             key={marker.time.toISOString()}
@@ -73,17 +75,18 @@ const Map = () => {
             onClick={() => {
               setSelected(marker)
             }}
-          />)}
-          {selected ? (
-            <InfoWindow
-              position={{ lat: selected.lat, lng: selected.lng }}
-              onCloseClick={() => {
-                setSelected(null)
-              }}
-            >
-              <p>hellur</p>
-            </InfoWindow>
-          ) : null}
+          />)
+        }
+        {selected ? (
+          <InfoWindow
+            position={{ lat: selected.lat, lng: selected.lng }}
+            onCloseClick={() => {
+              setSelected(null)
+            }}
+          >
+            <p>hellur</p>
+          </InfoWindow>
+        ) : null}
       </GoogleMap>
     </LoadScript>
   )
