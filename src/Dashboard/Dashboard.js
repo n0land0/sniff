@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Route, Switch, Link, Redirect } from 'react-router-dom'
 
 import Playdate from '../Playdate/Playdate'
-import './Dashboard.css'
+import './_Dashboard.scss'
 
 const Dashboard = ({ appointments, users }) => {
   const playdates = appointments.sort((apptA, apptB) =>

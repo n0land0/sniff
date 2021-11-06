@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Route, Switch, Link, Redirect } from 'react-router-dom'
 
-import './Playdate.css'
+import './_Playdate.scss'
 
 import dayjs from 'dayjs'
 

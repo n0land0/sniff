@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Route, Switch, Link, NavLink, Redirect } from 'react-router-dom'
-import './Header.css'
+import './_Header.scss'
 import Nav from '../Nav/Nav'
 
 const Header = () => {

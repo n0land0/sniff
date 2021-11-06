@@ -1,7 +1,7 @@
 import React from 'react'
 import { Route, Switch, Link, Redirect } from 'react-router-dom'
 
-import './Card.css'
+import './_Card.scss'
 
 const Card = ({ id, owner_name, dog_name, profile_pic, dog_breed }) => {
 

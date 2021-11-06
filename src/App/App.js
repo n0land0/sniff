@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Route, Switch, Link, Redirect } from 'react-router-dom'
-import './App.css'
+import './_App.scss'
 import fetchCalls from '../fetchCalls'
 
 // import Nav from '../Nav/Nav'
