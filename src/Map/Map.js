@@ -41,9 +41,9 @@ const Map = () => {
     mapRef.current = map
   }, [])
 
-  const panTo = useCallback(({ lat, lng }) => {
+  const panTo = useCallback(({ lat, lng }, zoom) => {
     mapRef.current.panTo({ lat, lng })
-    mapRef.current.setZoom(14)
+    mapRef.current.setZoom(zoom)
   })
 
   return (
@@ -52,7 +52,7 @@ const Map = () => {
       libraries={libraries}
     >
       <Search panTo={panTo} />
-      <Locate panTo={panTo} />
+      <Locate panTo={panTo} center={center}/>
       <GoogleMap
         mapContainerStyle={containerDimensions}
         center={center}
@@ -79,12 +79,12 @@ const Map = () => {
         }
         {selected ? (
           <InfoWindow
-            position={{ lat: selected.lat, lng: selected.lng }}
+            position={{ lat: selected.coords.lat, lng: selected.coords.lng }}
             onCloseClick={() => {
               setSelected(null)
             }}
           >
-            <p>hellur</p>
+            <p>{selected.name}</p>
           </InfoWindow>
         ) : null}
       </GoogleMap>

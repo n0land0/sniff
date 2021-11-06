@@ -8,6 +8,7 @@ import Gallery from '../Gallery/Gallery'
 import Profile from '../Profile/Profile'
 import Dashboard from '../Dashboard/Dashboard'
 import Map from '../Map/Map'
+import ArcGISMap from '../Map/ArcGISMap'
 
 import userData from '../userData'
 
@@ -42,6 +43,7 @@ class App extends Component {
       <main>
         <Route exact path='/' render={ () =>
           <>
+          <ArcGISMap />
           <Map />
           <Dashboard appointments={currentUser.appointments} users={filteredUsers}/>
           </>
