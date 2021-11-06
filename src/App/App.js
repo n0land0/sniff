@@ -7,6 +7,7 @@ import Nav from '../Nav/Nav'
 import Gallery from '../Gallery/Gallery'
 import Profile from '../Profile/Profile'
 import Dashboard from '../Dashboard/Dashboard'
+import Map from '../Map/Map'
 
 import userData from '../userData'
 
@@ -40,7 +41,10 @@ class App extends Component {
       <Nav />
       <main>
         <Route exact path='/' render={ () =>
+          <>
+          <Map />
           <Dashboard appointments={currentUser.appointments} users={filteredUsers}/>
+          </>
         } />
         <Route exact path='/findfriends' render={ () =>
           <Gallery users={filteredUsers}/>
