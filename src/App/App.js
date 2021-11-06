@@ -13,7 +13,7 @@ import userData from '../userData'
 import img1 from '../Assets/dog-1.png'
 import img2 from '../Assets/dog-2.png'
 import img3 from '../Assets/dog-3.png'
-import img4 from '../Assets/dog-4.png'
+import img5 from '../Assets/dog-5.png'
 
 class App extends Component {
   state = {
@@ -46,7 +46,7 @@ class App extends Component {
         <main>
           <img className="dog-one" src={img1} />
           <img className="dog-two" src={img2} />
-          <img className="dog-four" src={img4} />
+          <img className="dog-five" src={img5} />
           <Route exact path='/' render={ () =>
             <Dashboard appointments={currentUser.appointments} users={filteredUsers}/>
           } />
