@@ -3,33 +3,30 @@ import target from '../assets/target.png'
 import './Map.css'
 
 const Locate = ({ panTo, center }) => {
+  const showMyLocation = () => {
+    navigator.geolocation.getCurrentPosition(position => {
+      panTo({
+        lat: position.coords.latitude,
+        lng: position.coords.longitude
+      }, 14)
+    }, () => console.log('failed to locate user'))
+  }
+
   return (
-    <>
-    <button
-      className='locate__show-my-location-btn'
-      onClick={() => {
-        navigator.geolocation.getCurrentPosition(position => {
-          panTo({
-            lat: position.coords.latitude,
-            lng: position.coords.longitude
-          }, 14)
-        }, () => console.log('fail'))
-      }}
-    >
-      <img src={target} alt='show my location' />
-    </button>
-    <button
-      className='locate__show-my-location-btn'
-      onClick={() => {
-        navigator.geolocation.getCurrentPosition(position => {
-          panTo({
-            lat: center.lat,
-            lng: center.lng
-          }, 11)
-        }, () => console.log('fail'))
-      }}
-    >reset map</button>
-    </>
+    <article className='locate-container'>
+      <button
+        className='locate__show-my-location-btn'
+        onClick={showMyLocation}
+      >
+        <img src={target} alt='show my location' />
+      </button>
+      <button
+        className='locate__reset-map-btn'
+        onClick={() =>
+          panTo({ lat: center.lat, lng: center.lng }, 11)
+        }
+      >reset map</button>
+    </article>
   )
 }
 
