@@ -3,11 +3,18 @@ import { GoogleMap, useLoadScript, LoadScript, Marker, InfoWindow } from '@react
 import parksData from '../parksData'
 import dogPark from '../assets/dog-park.svg'
 
-const ParkMarkers = ({ setSelected }) => {
+const ParkMarkers = ({ panTo, setSelected }) => {
+  const parkCoords = (parkObj) => {
+    return {
+      lat: parkObj.coords.lat,
+      lng: parkObj.coords.lng
+    }
+  }
+
   const dogParkMarkers = parksData.map(parkObj =>
     <Marker
       key={parkObj.id}
-      position={{ lat: parkObj.coords.lat, lng: parkObj.coords.lng }}
+      position={parkCoords(parkObj)}
       icon={{
         url: dogPark,
         scaledSize: new window.google.maps.Size(30, 30),
@@ -16,6 +23,7 @@ const ParkMarkers = ({ setSelected }) => {
       }}
       onClick={() => {
         setSelected(parkObj)
+        panTo(parkCoords(parkObj), 14)
       }}
     />
   )
