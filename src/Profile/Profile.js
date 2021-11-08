@@ -69,9 +69,9 @@ class Profile extends Component {
         <section className='profile-container'>
           <article className='profile'>
             <img className='profile__pic' src={profile_pic} />
-            <p>owner's name: {owner_name}</p>
-            <p>dog's name: {dog_name}</p>
-            <p>bio: {bio}</p>
+            <p className='profile__text'>owner's name: {owner_name}</p>
+            <p className='profile__text'>dog's name: {dog_name}</p>
+            <p className='profile__text'>bio: {bio}</p>
             <Link to='/findfriends'>
               <button className="find-friends-btn">find more friends</button>
             </Link>
