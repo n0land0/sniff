@@ -6,9 +6,9 @@ import ParkMarkers from './ParkMarkers'
 import { containerDimensions, center, options, libraries } from './mapConfig'
 import dogPark from '../assets/dog-park.svg'
 
-const Map = () => {
-  const [markers, setMarkers] = useState([])
-  const [selected, setSelected] = useState(null)
+const Map = ({ markers, setMarkers, selected, setSelected }) => {
+  // const [markers, setMarkers] = useState([])
+  // const [selected, setSelected] = useState(null)
 
   const onMapClick = useCallback((event) => setMarkers(current =>
     [...current, {
@@ -44,7 +44,6 @@ const Map = () => {
         onLoad={onMapLoad}
       >
         <ParkMarkers panTo={panTo} setSelected={setSelected}/>
-
         {selected ? (
           <InfoWindow
             position={{ lat: selected.coords.lat, lng: selected.coords.lng }}

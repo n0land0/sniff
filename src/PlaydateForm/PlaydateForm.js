@@ -8,16 +8,34 @@ class PlaydateForm extends Component {
   state = {
     date: '',
     location: '',
-    parks: []
+    parks: [],
+    selectedParkId: null
   }
 
   componentDidMount = () => {
-    this.setState({ parks: parksData })
+    // fetchCalls.getParks()
+      // .then(parks =>
+        this.setState({ parks: parksData })
+      // )
   }
 
   handleChange = (event) => {
     const { name, value } = event.target
     this.setState({ [name]: value })
+    this.findPark(event)
+  }
+
+  findPark = (event) => {
+    const { markers, setMarkers, selected, setSelected } = this.props
+    const { parks } = this.state
+
+    const selectedPark = parks.find(parkObj => parkObj.name === event.target.value)
+    setSelected(selectedPark)
+  }
+
+  sendParkToForm = () => {
+    const { selected } = this.props
+    this.setState({ location: selected })
   }
 
   handleSubmit = (event) => {
@@ -49,7 +67,7 @@ class PlaydateForm extends Component {
 
   render() {
     const { date, location, parks } = this.state
-    const parkOptions = parks.map(park => <option value={park} >{park}</option>)
+    const parkOptions = parks.map(park => <option value={park.name} >{park.name}</option>)
 
     return (
       <form onSubmit={this.handleSubmit}>

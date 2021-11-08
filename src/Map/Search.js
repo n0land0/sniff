@@ -24,7 +24,7 @@ const Search = ({ panTo }) => {
           .then(results =>
             getLatLng(results[0])
               .then(({ lat, lng }) =>
-                panTo({ lat, lng })
+                panTo({ lat, lng }, 14)
               )
           )
           .catch(error => console.log(error.message))
@@ -36,7 +36,7 @@ const Search = ({ panTo }) => {
           setValue(event.target.value)
         }}
         disabled={!ready}
-        placeholder='enter an address'
+        placeholder='enter a landmark or address'
       />
       <ComboboxPopover>
         <ComboboxList>
