@@ -1,5 +1,3 @@
-import parksData from './parksData'
-
 const fetchCalls = {
   getUsers() {
     return fetch('https://sniff-api.herokuapp.com/api/v1/users')
@@ -38,16 +36,15 @@ const fetchCalls = {
   },
 
   getParks() {
-    return parksData
-    // return fetch('https://sniff-api.herokuapp.com/api/v1/parks')
-    //   .then(response => {
-    //     this.checkResponse(response)
-    //     return response.json()
-    //   })
-    //   .catch(error => {
-    //     console.error(error)
-    //     return error.message
-    //   })
+    return fetch('https://sniff-api.herokuapp.com/api/v1/parks')
+      .then(response => {
+        this.checkResponse(response)
+        return response.json()
+      })
+      .catch(error => {
+        console.error(error)
+        return error.message
+      })
   },
 
   postAppointment(newPlaydate) {
