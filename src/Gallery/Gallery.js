@@ -1,7 +1,7 @@
 import React from 'react'
 import { Route, Switch, Link, Redirect } from 'react-router-dom'
 import Card from '../Card/Card'
-import './Gallery.css'
+import './_Gallery.scss'
 
 const Gallery = ({ users }) => {
   const userCards = users.map(user => <Card key={user.id} {...user} />)

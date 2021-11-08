@@ -1,15 +1,20 @@
 import React, { Component } from 'react'
 import { Route, Switch, Link, Redirect } from 'react-router-dom'
-import './App.css'
+import './_App.scss'
 import fetchCalls from '../fetchCalls'
 
-import Nav from '../Nav/Nav'
+// import Nav from '../Nav/Nav'
+import Header from '../Header/Header'
 import Gallery from '../Gallery/Gallery'
 import Profile from '../Profile/Profile'
 import Dashboard from '../Dashboard/Dashboard'
 import Map from '../Map/Map'
 
 import userData from '../userData'
+import img1 from '../assets/dog-1.png'
+import img2 from '../assets/dog-2.png'
+import img3 from '../assets/dog-3.png'
+import img5 from '../assets/dog-5.png'
 
 class App extends Component {
   state = {
@@ -38,25 +43,25 @@ class App extends Component {
 
     return (
       <>
-      <Nav />
-      <main>
-        <Route exact path='/' render={ () =>
-          <>
-          <Map />
-          <Dashboard appointments={currentUser.appointments} users={filteredUsers}/>
-          </>
-        } />
-        <Route exact path='/findfriends' render={ () =>
-          <Gallery users={filteredUsers}/>
-        } />
-        <Route path='/profile/:userId' render={ ({ match }) =>
-          <Profile
-            currentUserId={currentUser.id}
-            selectedUserId={+match.params.userId}
-            updateCurrentUser={this.updateCurrentUser}
-          />
-        } />
-      </main>
+        <Header />
+        <main>
+          <img className="dog-one" src={img1} />
+          <img className="dog-two" src={img2} />
+          <img className="dog-five" src={img5} />
+          <Route exact path='/' render={ () =>
+            <Dashboard appointments={currentUser.appointments} users={filteredUsers}/>
+          } />
+          <Route exact path='/findfriends' render={ () =>
+            <Gallery users={filteredUsers}/>
+          } />
+          <Route path='/profile/:userId' render={ ({ match }) =>
+            <Profile
+              currentUserId={currentUser.id}
+              selectedUserId={+match.params.userId}
+              updateCurrentUser={this.updateCurrentUser}
+            />
+          } />
+        </main>
       </>
     )
   }

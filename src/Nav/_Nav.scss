@@ -1,0 +1,27 @@
+.navbar {
+  display: flex;
+  position: fixed;
+  align-self: flex-end;
+  height: 5rem;
+  right: 0;
+}
+
+.navbar__tab {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 7rem;
+  background-color: #F48498;
+  border-radius: 10px 10px 0 0;
+  font-family: 'Dongle', sans-serif;
+  font-size: 1.9rem;
+  color: white;
+  cursor: pointer;
+}
+
+.active {
+  text-decoration: underline;
+  background-color: #ACD8AA;
+  color: #F4627C;
+}

@@ -1,0 +1,16 @@
+@mixin height-width($hei, $wid) {
+  height: $hei;
+  width: $wid;
+}
+
+@mixin pos-zindex-opa($opa) {
+  position: absolute;
+  z-index: 1;
+  opacity: $opa;
+}
+
+@mixin flex-align-text() {
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
