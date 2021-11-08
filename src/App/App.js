@@ -1,55 +1,62 @@
 import React, { Component } from 'react'
-import { Route, Switch, Link, Redirect } from 'react-router-dom'
-import './_App.scss'
+import { Route } from 'react-router-dom'
+// import './_App.scss'
 import fetchCalls from '../fetchCalls'
 
-// import Nav from '../Nav/Nav'
 import Header from '../Header/Header'
 import Gallery from '../Gallery/Gallery'
 import Profile from '../Profile/Profile'
 import Dashboard from '../Dashboard/Dashboard'
-import Map from '../Map/Map'
-
-import userData from '../userData'
-import img1 from '../assets/dog-1.png'
-import img2 from '../assets/dog-2.png'
-import img3 from '../assets/dog-3.png'
-import img5 from '../assets/dog-5.png'
 
 class App extends Component {
   state = {
-    currentUser: {
-      appointments: []
-    },
-    users: []
+    currentUser: {},
+    appointments: [],
+    users: [],
+    status: 'loading',
+    error: ''
   }
 
   componentDidMount() {
     this.updateCurrentUser()
   }
 
-  updateCurrentUser = () => {
-    Promise.all([fetchCalls.getSingleUser(2), fetchCalls.getUsers()])
-      .then(([user, allUsers]) => {
-        this.setState({ currentUser: {...user}, users: allUsers })
+  updateCurrentUser = async () => {
+    const user = await fetchCalls.getSingleUser(2)
+    const allUsers = await fetchCalls.getUsers()
+    const appointments = await fetchCalls.getAppointments(user.id)
+    this.setState({
+      currentUser: {...user},
+      users: allUsers,
+      appointments: appointments,
+      status: 'success'
     })
+    // .catch(error =>
+    //   this.setState({ error: error.message })
+    // )
   }
 
-// should PlaydateForm be a sibling of Profile?
-  // ...if currentUser playdates need to be added to App state
+  deleteAppointment = (appointmentId) => {
+    fetchCalls.deleteAppointment(appointmentId)
+      .then(() => {
+        this.updateCurrentUser()
+      })
+  }
+
   render() {
-    const { currentUser, users } = this.state
+    const { currentUser, appointments, users } = this.state
     const filteredUsers = users.filter(user => user.id !== currentUser.id)
 
     return (
       <>
         <Header />
         <main>
-          <img className="dog-one" src={img1} />
-          <img className="dog-two" src={img2} />
-          <img className="dog-five" src={img5} />
           <Route exact path='/' render={ () =>
-            <Dashboard appointments={currentUser.appointments} users={filteredUsers}/>
+            <Dashboard
+              appointments={appointments}
+              users={filteredUsers}
+              deleteAppointment={this.deleteAppointment}
+            />
           } />
           <Route exact path='/findfriends' render={ () =>
             <Gallery users={filteredUsers}/>
@@ -59,6 +66,7 @@ class App extends Component {
               currentUserId={currentUser.id}
               selectedUserId={+match.params.userId}
               updateCurrentUser={this.updateCurrentUser}
+              deleteAppointment={this.deleteAppointment}
             />
           } />
         </main>

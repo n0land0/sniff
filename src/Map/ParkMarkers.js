@@ -1,9 +1,13 @@
-import React, { Component, useState, useCallback, useRef } from 'react'
-import { GoogleMap, useLoadScript, LoadScript, Marker, InfoWindow } from '@react-google-maps/api'
+import React, { useContext } from 'react'
+import { Marker } from '@react-google-maps/api'
 import parksData from '../parksData'
 import dogPark from '../assets/dog-park.svg'
+import {PlaydateContext} from '../PlaydateFormAndMap/PlaydateContextProvider'
 
-const ParkMarkers = ({ panTo, setSelected }) => {
+const ParkMarkers = ({ panTo }) => {
+  // const { date, setDate, selected, setSelected, location, setLocation, parks, setParks } = useContext(PlaydateContext)
+  const { setSelected, setLocation } = useContext(PlaydateContext)
+
   const parkCoords = (parkObj) => {
     return {
       lat: parkObj.coords.lat,
@@ -23,6 +27,7 @@ const ParkMarkers = ({ panTo, setSelected }) => {
       }}
       onClick={() => {
         setSelected(parkObj)
+        setLocation(parkObj.name)
         panTo(parkCoords(parkObj), 14)
       }}
     />

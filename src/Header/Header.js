@@ -1,6 +1,5 @@
-import React, { Component } from 'react'
-import { Route, Switch, Link, NavLink, Redirect } from 'react-router-dom'
-import './_Header.scss'
+import React from 'react'
+// import './_Header.scss'
 import Nav from '../Nav/Nav'
 
 const Header = () => {
@@ -8,7 +7,7 @@ const Header = () => {
   return (
     <header className='header'>
       <article className='header__user-photo-username'>
-        <img src='https://i.imgur.com/5gC7saF.jpeg' className='header__user-photo' />
+        <img src='https://i.imgur.com/5gC7saF.jpeg' className='header__user-photo' alt='user photo' />
         <h3 className='header__username'>Bruce</h3>
       </article>
       <article className='header__logo-tagline'>

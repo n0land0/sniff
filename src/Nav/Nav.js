@@ -1,6 +1,6 @@
-import React, { Component } from 'react'
-import { Route, Switch, Link, NavLink, Redirect } from 'react-router-dom'
-import './_Nav.scss'
+import React from 'react'
+import {  NavLink } from 'react-router-dom'
+// import './_Nav.scss'
 
 const Nav = () => {
 

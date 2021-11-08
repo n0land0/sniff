@@ -1,8 +1,11 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import {PlaydateContext} from '../PlaydateFormAndMap/PlaydateContextProvider'
 import target from '../assets/target.png'
-import './Map.css'
 
-const Locate = ({ panTo, center, setSelected }) => {
+const Locate = ({ panTo, center }) => {
+  // const { date, setDate, selected, setSelected, location, setLocation, parks, setParks } = useContext(PlaydateContext)
+    const { setSelected } = useContext(PlaydateContext)
+
   const showMyLocation = () => {
     navigator.geolocation.getCurrentPosition(position => {
       panTo({

@@ -1,16 +1,23 @@
-import React, { useCallback, useRef, useContext } from 'react'
-import { GoogleMap, LoadScript, Marker, InfoWindow } from '@react-google-maps/api'
+import React, { Component, useState, useCallback, useRef, useContext } from 'react'
+import { GoogleMap, useLoadScript, LoadScript, Marker, InfoWindow } from '@react-google-maps/api'
 import Search from './Search'
 import Locate from './Locate'
 import ParkMarkers from './ParkMarkers'
-import {PlaydateContext} from '../PlaydateFormAndMap/PlaydateContextProvider'
+import PlaydateContext from '../PlaydateFormAndMap/PlaydateContextProvider'
 import { containerDimensions, center, options, libraries } from './mapConfig'
-// import dogPark from '../assets/dog-park.svg'
-// import './_Map.scss'
+import dogPark from '../assets/dog-park.svg'
 
-const Map = () => {
-  // const { date, setDate, selected, setSelected, location, setLocation, parks, setParks } = useContext(PlaydateContext)
-  const { selected, setSelected } = useContext(PlaydateContext)
+const Map = ({ markers, setMarkers, selected, setSelected }) => {
+  // const [markers, setMarkers] = useState([])
+  // const [selected, setSelected] = useState(null)
+
+  // const onMapClick = useCallback((event) => setMarkers(current =>
+  //   [...current, {
+  //     lat: event.latLng.lat(),
+  //     lng: event.latLng.lng(),
+  //     time: new Date()
+  //   }]
+  // ), [])
 
   const mapRef = useRef()
   const onMapLoad = useCallback((map) => {
@@ -27,10 +34,8 @@ const Map = () => {
       googleMapsApiKey='AIzaSyCOwqWZQDbUMMCFOsyYUKtLmxll4AIM-6g'
       libraries={libraries}
     >
-      <article className='search-locate-container'>
-        <Search panTo={panTo} />
-        <Locate panTo={panTo} center={center}/>
-      </article>
+      <Search panTo={panTo} />
+      <Locate panTo={panTo} center={center} setSelected={setSelected}/>
       <GoogleMap
         mapContainerStyle={containerDimensions}
         center={center}
@@ -38,7 +43,7 @@ const Map = () => {
         options={options}
         onLoad={onMapLoad}
       >
-        <ParkMarkers panTo={panTo}/>
+        <ParkMarkers panTo={panTo} setSelected={setSelected}/>
         {selected ? (
           <InfoWindow
             position={{ lat: selected.coords.lat, lng: selected.coords.lng }}

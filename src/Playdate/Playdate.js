@@ -1,26 +1,26 @@
-import React, { Component } from 'react'
-import { Route, Switch, Link, Redirect } from 'react-router-dom'
+import React from 'react'
+import { Link } from 'react-router-dom'
 
-import './_Playdate.scss'
+// import './_Playdate.scss'
 
 import dayjs from 'dayjs'
 
-const Playdate = ({ date, location, playmate }) => {
-  const { ownerName, dogName, id } = playmate
+const Playdate = ({ id, dogPark, date, ownersId, ownerName, dogName, profilePic, deleteAppointment }) => {
+  // const { ownerName, dogName, id } = playmate
   date = dayjs(date).format('ddd MMM D, YYYY')
 
   // cancel button - post both users' appts, trigger app CDU
 
   return (
-    <article className='playdate' style={{backgroundImage: `url(${playmate.profile_pic})` }}>
+    <article className='playdate' style={{backgroundImage: `url(${profilePic})` }}>
       <p>on {date}</p>
-      <p>at {location}</p>
+      <p>at {dogPark}</p>
       <p>with
-        <Link to={`/profile/${id}`}>
+        <Link to={`/profile/${ownersId}`}>
           {" " + ownerName} and {dogName}
         </Link>
       </p>
-      <button>Cancel</button>
+      <button onClick={() => deleteAppointment(id)}>Cancel</button>
     </article>
   )
 }

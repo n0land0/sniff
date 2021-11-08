@@ -1,96 +1,87 @@
-import React, { Component } from 'react'
-import { Route, Switch, Link, Redirect } from 'react-router-dom'
+import React, { useContext } from 'react'
+import { PlaydateContext } from '../PlaydateFormAndMap/PlaydateContextProvider'
+// import './_PlaydateForm.scss'
 
-import parksData from '../parksData'
 import fetchCalls from '../fetchCalls'
 
-class PlaydateForm extends Component {
-  state = {
-    date: '',
-    location: '',
-    parks: [],
-    selectedParkId: null
-  }
 
-  componentDidMount = () => {
-    // fetchCalls.getParks()
-      // .then(parks =>
-        this.setState({ parks: parksData })
-      // )
-  }
+const PlaydateForm = ({ currentUserId, selectedUserId, updateProfile, updateCurrentUser }) => {
+  // const { date, setDate, selected, setSelected, location, setLocation, parks, setParks } = useContext(PlaydateContext)
+  const { date, setDate, setSelected, location, setLocation, parks } = useContext(PlaydateContext)
 
-  handleChange = (event) => {
+  const handleChange = (event) => {
     const { name, value } = event.target
-    this.setState({ [name]: value })
-    this.findPark(event)
+    if (name === 'date') { setDate(value) }
+    if (name === 'location') {
+      setLocation(value)
+      findPark(event)
+    }
   }
 
-  findPark = (event) => {
-    const { markers, setMarkers, selected, setSelected } = this.props
-    const { parks } = this.state
-
+  const findPark = (event) => {
     const selectedPark = parks.find(parkObj => parkObj.name === event.target.value)
     setSelected(selectedPark)
   }
 
-  sendParkToForm = () => {
-    const { selected } = this.props
-    this.setState({ location: selected })
-  }
-
-  handleSubmit = (event) => {
+  const handleSubmit = (event) => {
     event.preventDefault()
-    const { date, location } = this.state
-    const { currentUserId, selectedUserId, updateProfile, updateCurrentUser } = this.props
-    const usersInvolved = [ currentUserId, selectedUserId ]
-    const playdateId = Date.now()
-    const playdates = usersInvolved.map(id => {
-      return {
-        id: playdateId,
-        userId: id,
-        playmate: usersInvolved.find(userId => userId !== id),
-        date, location,
-      }
-    })
+    // const { date, location } = this.state
+    // const { currentUserId, selectedUserId, updateProfile, updateCurrentUser } = this.props
+    // const usersInvolved = [ currentUserId, selectedUserId ]
+    // const playdateId = Date.now()
+    // const playdates = usersInvolved.map(id => {
+    //   return {
+    //     id: playdateId,
+    //     userId: id,
+    //     playmate: usersInvolved.find(userId => userId !== id),
+    //     date, location,
+    //   }
+    // })
+    const playdate = {
+      ownerIds: [currentUserId, selectedUserId],
+      dogPark: location,
+      date: date,
+    }
 
-    fetchCalls.postAppointment(playdates)
+    fetchCalls.postAppointment(playdate)
     .then(() => {
       updateCurrentUser()
       updateProfile()
     })
-    this.clearInputs()
+    clearInputs()
   }
 
-  clearInputs = () => {
-    this.setState({ date: '', location: '' })
+  const clearInputs = () => {
+    setDate('')
+    setSelected(null)
+    setLocation('')
   }
 
-  render() {
-    const { date, location, parks } = this.state
-    const parkOptions = parks.map(park => <option value={park.name} >{park.name}</option>)
+  const parkOptions = parks.map(park => <option value={park.name} >{park.name}</option>)
 
-    return (
-      <form onSubmit={this.handleSubmit}>
-        <input
-          type='date'
-          name='date'
-          value={date}
-          required
-          onChange={this.handleChange}
-        />
-        <select
-          name='location'
-          value={location}
-          onChange={this.handleChange}
-          required
-        >
-          <option value='' disabled selected hidden>Choose a park</option>
-          {parkOptions}
-        </select>
-        <button>Set Playdate</button>
-      </form>
-    )
-  }
+  return (
+    <form className='playdate-form' onSubmit={handleSubmit}>
+      <input
+        className='playdate-form__date'
+        type='date'
+        name='date'
+        value={date}
+        required
+        onChange={handleChange}
+      />
+      <select
+        className='playdate-form__dropdown'
+        name='location'
+        value={location}
+        onChange={handleChange}
+        required
+      >
+        <option value='' disabled selected hidden>choose a park</option>
+        {parkOptions}
+      </select>
+      <button className='playdate-form__set-playdate-btn'>set playdate</button>
+    </form>
+  )
 }
 
 export default PlaydateForm

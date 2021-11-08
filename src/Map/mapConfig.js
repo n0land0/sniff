@@ -1,8 +1,8 @@
 import mapStyles from './mapStyles'
 
 const containerDimensions = {
-  width: '400px',
-  height: '400px'
+  width: '30rem',
+  height: '30rem'
 }
 
 const center = {
