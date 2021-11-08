@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Playdate from '../Playdate/Playdate'
+import Playdate from './Playdate/Playdate'
 // import './_Dashboard.scss'
 
 const Dashboard = ({ appointments, users, deleteAppointment }) => {
@@ -14,7 +14,7 @@ const Dashboard = ({ appointments, users, deleteAppointment }) => {
     <>
       <section>
       </section>
-      <h2>Playdates</h2>
+      <h2>playdates</h2>
       <section className='playdates-container'>
         <button
             id="slideLeft"

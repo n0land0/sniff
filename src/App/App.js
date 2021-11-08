@@ -49,7 +49,7 @@ class App extends Component {
 
     return (
       <>
-        <Header />
+        <Header profilePic={currentUser.profile_pic}/>
         <main>
           <Route exact path='/' render={ () =>
             <Dashboard

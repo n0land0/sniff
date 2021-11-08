@@ -1,13 +1,13 @@
 import React from 'react'
 // import './_Header.scss'
-import Nav from '../Nav/Nav'
+import Nav from './Nav/Nav'
 
-const Header = () => {
+const Header = ({ profilePic }) => {
 
   return (
     <header className='header'>
       <article className='header__user-photo-username'>
-        <img src='https://i.imgur.com/5gC7saF.jpeg' className='header__user-photo' alt='user photo' />
+        <img src={profilePic} className='header__user-photo' alt='user photo' />
         <h3 className='header__username'>Bruce</h3>
       </article>
       <article className='header__logo-tagline'>
