@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
 import { Route, Switch, Link, Redirect } from 'react-router-dom'
 
-import PlaydateForm from '../PlaydateForm/PlaydateForm'
+import PlaydateFormAndMap from '../PlaydateFormAndMap/PlaydateFormAndMap'
+// import PlaydateForm from '../PlaydateForm/PlaydateForm'
+// import Map from '../Map/Map'
 
 import userData from '../userData'
 import fetchCalls from '../fetchCalls'
@@ -36,14 +38,15 @@ class Profile extends Component {
     })
 
     return (
+      <>
       <section className='profile'>
-        <img src={profile_pic} />
+        <img className='profile__pic' src={profile_pic} />
         <p>Owner's Name: {owner_name}</p>
         <p>Dog's Name: {dog_name}</p>
         <p>Bio: {bio}</p>
         {playdateReminder ?
           <p>You have a playdate scheduled on {playdateReminder.date} at {playdateReminder.location}.</p> :
-          <PlaydateForm
+          <PlaydateFormAndMap
             currentUserId={currentUserId}
             selectedUserId={selectedUserId}
             updateProfile={this.updateProfile}
@@ -54,6 +57,7 @@ class Profile extends Component {
           <button className="find-friends-btn">Find more friends</button>
         </Link>
       </section>
+      </>
     )
   }
 }
