@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 
-import PlaydateFormAndMap from '../PlaydateFormAndMap/PlaydateFormAndMap'
+import PlaydateFormAndMap from './PlaydateFormAndMap/PlaydateFormAndMap'
 // import PlaydateForm from '../PlaydateForm/PlaydateForm'
 // import Map from '../Map/Map'
 
@@ -11,15 +11,6 @@ import fetchCalls from '../fetchCalls'
 // it's starting to feel like building this as a modal will make site navigation a lot cleaner - confine page changes to navbar
 
 class Profile extends Component {
-  // state = {
-  //   id: 0,
-  //   owner_name: '',
-  //   dog_name: '',
-  //   profile_pic: '',
-  //   bio: '',
-  //   appointments: []
-  // }
-
   state = {
     selectedUser: {
       id: '',
@@ -78,21 +69,25 @@ class Profile extends Component {
         <section className='profile-container'>
           <article className='profile'>
             <img className='profile__pic' src={profile_pic} />
-            <p>Owner's Name: {owner_name}</p>
-            <p>Dog's Name: {dog_name}</p>
-            <p>Bio: {bio}</p>
+            <p>owner's name: {owner_name}</p>
+            <p>dog's name: {dog_name}</p>
+            <p>bio: {bio}</p>
             <Link to='/findfriends'>
-              <button className="find-friends-btn">Find more friends</button>
+              <button className="find-friends-btn">find more friends</button>
             </Link>
           </article>
           {
-            existingAppointment
+            (existingAppointment && new Date() < new Date(existingAppointment.date))
               ? <>
-                <h2>You have a playdate scheduled on {existingAppointment.date} at {existingAppointment.dogPark}.</h2>
-                <button onClick={() => {
-                  deleteAppointment(existingAppointment.id)
-                  this.updateProfile()
-                }}>cancel</button>
+                <div className='playdate-reminder'>
+                  <h2 className='playdate-reminder__message'>You have a playdate scheduled on {existingAppointment.date} at {existingAppointment.dogPark}.</h2>
+                  <button
+                    className='playdate-reminder__cancel-btn'
+                    onClick={() => {
+                    deleteAppointment(existingAppointment.id)
+                    this.updateProfile()
+                  }}>cancel</button>
+                </div>
                 </>
               : <PlaydateFormAndMap
                   currentUserId={currentUserId}
