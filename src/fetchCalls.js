@@ -1,3 +1,5 @@
+import parksData from './parksData'
+
 const fetchCalls = {
   getUsers() {
     // return fetch('http://localhost:3001/api/v1/users')
@@ -29,6 +31,10 @@ const fetchCalls = {
         this.checkResponse(response)
         return response.json()
       })
+  },
+
+  getParks() {
+    return parksData
   },
 
   postAppointment(newPlaydates) {
