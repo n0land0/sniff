@@ -2,7 +2,7 @@ import React from 'react'
 import target from '../assets/target.png'
 import './Map.css'
 
-const Locate = ({ panTo, center }) => {
+const Locate = ({ panTo, center, setSelected }) => {
   const showMyLocation = () => {
     navigator.geolocation.getCurrentPosition(position => {
       panTo({
@@ -10,6 +10,7 @@ const Locate = ({ panTo, center }) => {
         lng: position.coords.longitude
       }, 14)
     }, () => console.log('failed to locate user'))
+    setSelected(null)
   }
 
   return (
@@ -22,9 +23,10 @@ const Locate = ({ panTo, center }) => {
       </button>
       <button
         className='locate__reset-map-btn'
-        onClick={() =>
+        onClick={() => {
           panTo({ lat: center.lat, lng: center.lng }, 11)
-        }
+          setSelected(null)
+        }}
       >reset map</button>
     </article>
   )
