@@ -2,29 +2,37 @@ import React, { Component } from 'react'
 import { Route, Switch, Link, Redirect } from 'react-router-dom'
 
 import Playdate from '../Playdate/Playdate'
-import './Dashboard.css'
+import './_Dashboard.scss'
 
 const Dashboard = ({ appointments, users }) => {
   const playdates = appointments.sort((apptA, apptB) =>
     new Date(apptB.date) - new Date(apptA.date)
   ).map(appt =>
-  //   appt.userToMeet = appt.usersInvolved.filter(userId =>
-  //     users.some(user => user.id === userId)
-  //   ).map(userId =>
-  //     users.find(user => user.id === userId)
-  //   )[0]
     <Playdate key={appt.id} {...appt}/>
   )
-
-  // fetch user when App mounts, pass in appts, iterate and return Playdate components
 
   return (
     <>
       <section>
       </section>
+      <h2>Playdates</h2>
       <section className='playdates-container'>
-        <h2>Playdates</h2>
-        {playdates}
+        <button
+            id="slideLeft"
+            type="button"
+            onClick={() =>
+              document.querySelector('.playdates-container__playdates').scrollLeft -= 309
+            }>˂</button>
+        <div className='playdates-container__playdates'>
+          {playdates}
+        </div>
+        <button
+          id="slideRight"
+          type="button"
+          onClick={() =>
+            document.querySelector('.playdates-container__playdates').scrollLeft += 309
+          }
+        >˃</button>
       </section>
     </>
   )

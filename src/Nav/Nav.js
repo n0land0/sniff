@@ -1,16 +1,24 @@
 import React, { Component } from 'react'
 import { Route, Switch, Link, NavLink, Redirect } from 'react-router-dom'
-import './Nav.css'
+import './_Nav.scss'
 
 const Nav = () => {
 
   return (
-    <nav>
-      <NavLink exact to='/' activeClassName='active'>
-        Home
+    <nav className='navbar'>
+      <NavLink
+        exact to='/'
+        className='navbar__tab'
+        activeClassName='active'
+      >
+        home
       </NavLink>
-      <NavLink exact to='/findfriends' activeClassName='active'>
-        Find Friends
+      <NavLink
+        exact to='/findfriends'
+        className='navbar__tab'
+        activeClassName='active'
+      >
+        find friends
       </NavLink>
     </nav>
   )

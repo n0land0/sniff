@@ -5,7 +5,7 @@ import PlaydateForm from '../PlaydateForm/PlaydateForm'
 
 import userData from '../userData'
 import fetchCalls from '../fetchCalls'
-import './Profile.css'
+import './_Profile.scss'
 
 // it's starting to feel like building this as a modal will make site navigation a lot cleaner - confine page changes to navbar
 
@@ -41,7 +41,8 @@ class Profile extends Component {
         <p>Owner's Name: {owner_name}</p>
         <p>Dog's Name: {dog_name}</p>
         <p>Bio: {bio}</p>
-        {playdateReminder ?
+        {
+          playdateReminder ?
           <p>You have a playdate scheduled on {playdateReminder.date} at {playdateReminder.location}.</p> :
           <PlaydateForm
             currentUserId={currentUserId}
