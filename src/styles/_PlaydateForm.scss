@@ -1,0 +1,11 @@
+.playdate-form {
+  display: flex;
+}
+
+.playdate-form__date,
+.playdate-form__dropdown,
+.playdate-form__set-playdate-btn {
+  border: none;
+  padding: 1rem;
+  font-size: 1rem;
+}

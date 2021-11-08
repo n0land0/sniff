@@ -1,0 +1,33 @@
+// @import './src/_mixins.scss';
+@import '_mixins';
+
+.playdates-container {
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: center;
+  width: 100%;
+  text-align: center;
+}
+
+.playdates-container__playdates {
+  display: flex;
+  width: 100%;
+  overflow-x: scroll;
+  background-color: pink;
+}
+
+#slideLeft,
+#slideRight {
+  font-size: 2rem;
+}
+/* .playdates-container__playdates {
+  width: auto;
+  height: 45vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  overflow-x: scroll;
+  -ms-overflow-style: none;
+} */
