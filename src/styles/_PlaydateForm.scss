@@ -9,3 +9,17 @@
   padding: 1rem;
   font-size: 1rem;
 }
+
+.playdate-form__date:hover,
+.playdate-form__dropdown:hover {
+  cursor: pointer;
+}
+
+.playdate-form__date {
+  border-radius: 0 0 0 10px;
+}
+
+.playdate-form__set-playdate-btn {
+  border-radius: 0 0 10px 0;
+  box-shadow: none;
+}

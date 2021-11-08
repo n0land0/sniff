@@ -3,26 +3,26 @@
 
 .profile-card {
   display: flex;
-  align-items: center;
   flex-direction: column;
+  margin: 3rem 4rem;
+  padding: 2rem;
+  align-items: center;
   text-align: center;
-}
-
-.profile-card img {
-  @include height-width(10rem, 10rem);
+  // @include height-width(13rem, 13rem);
+  width: 13rem;
+  @include profile-containers();
 }
 
 .profile-card__image {
-  position: fixed;
-  @include height-width(10rem, 10rem);
-  margin-top: -150px;
-  border-radius: 15px 15px 4px 4px;
-  z-index: 2;
+  // @include height-width(13rem, 13rem);
+  width: 13rem;
+  border-radius: 15px;
   transition: height .25s ease-out, width .25s ease-out;
 }
 
-.profile-card__image:hover {
-  @include height-width(11rem, 11rem);
+.profile-card:hover {
+  // @include height-width(14rem, 14rem);
+  // width: 14rem;
   animation: wagthedog .2s;
   animation-direction: alternate;
   animation-iteration-count: infinite;
@@ -34,7 +34,7 @@
 }
 
 .profile-card__card-details {
-  margin-top: 10px;
+  // margin-top: 2rem;
   font-family: 'Dongle', sans-serif;
-  font-size: 20px;
+  font-size: 2rem;
 }

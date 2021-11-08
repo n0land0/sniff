@@ -5,9 +5,9 @@
 @import '_App';
 @import '_Card';
 @import '_Dashboard';
+// @import '_GalleryHeightBPs';
+// @import '_GalleryWidthBPs';
 @import '_Gallery';
-@import '_GalleryHeightBPs';
-@import '_GalleryWidthBPs';
 @import '_Header';
 @import '_Map';
 @import '_Nav';
@@ -23,6 +23,7 @@ html {
 body {
   width: 100vw;
   height: 100vh;
+  font-family: $main-font;
 }
 
 #root {

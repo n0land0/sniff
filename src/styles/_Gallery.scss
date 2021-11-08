@@ -1,8 +1,11 @@
-@import './_GalleryHeightBPs.scss';
-@import './_GalleryWidthBPs.scss';
+// @import './_GalleryHeightBPs';
+// @import './_GalleryWidthBPs';
 
 .gallery {
   display: flex;
   justify-content: space-around;
+  // align-items: center;
   flex-wrap: wrap;
+  overflow-y: scroll;
+  margin-top: 10%;
 }

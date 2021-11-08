@@ -10,21 +10,22 @@ main {
   background-image: url('../assets/3dogs.png');
   background-size: contain;
   background-position: center;
+  overflow: scroll;
 }
 
-.dog-one {
-  @include height-width(50rem, 33rem);
-  @include pos-zindex-opa(19%);
-}
-
-.dog-two {
-  @include height-width(32rem, 46.1rem);
-  @include pos-zindex-opa(19%);
-  margin: 51px 0px 0px 774px;
-}
-
-.dog-five {
-  @include height-width(8rem, 6rem);
-  @include pos-zindex-opa(3%);
-  margin: 293px 0px 0px 1265px;
-}
+// .dog-one {
+//   @include height-width(50rem, 33rem);
+//   @include pos-zindex-opa(19%);
+// }
+//
+// .dog-two {
+//   @include height-width(32rem, 46.1rem);
+//   @include pos-zindex-opa(19%);
+//   margin: 51px 0px 0px 774px;
+// }
+//
+// .dog-five {
+//   @include height-width(8rem, 6rem);
+//   @include pos-zindex-opa(3%);
+//   margin: 293px 0px 0px 1265px;
+// }

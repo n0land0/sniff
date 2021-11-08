@@ -6,11 +6,37 @@
   width: 10rem;
   height: 10rem;
   margin: 1rem;
-  border: 1px solid black;
   border-radius: 100%;
+  background-size: cover;
   text-align: center;
 }
 
-p {
+.playdate__text-overlay {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  border-radius: 100%;
+  font-size: 1.25rem;
+  color: white;
+  backdrop-filter: brightness(0.6);
+  transition: all 0.3s ease-in-out;
+}
+
+.playdate__text-overlay a {
+  color: #8EDCE6;
+}
+
+.playdate__text-overlay p {
   width: 10rem;
+}
+
+.playdate__text-overlay span {
+  color: #E28C79;
+}
+
+.playdate__cancel-btn {
+  width: 35%;
+  padding: .25rem;
 }
