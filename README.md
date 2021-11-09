@@ -43,14 +43,16 @@ BACK-END:
 
 ## Wins
 
-- Moving beyond MVP into extensions - e.g. implementing Google Maps API, writing 3 tables, adding DELETE functionality
+- Moving beyond MVP into extensions - e.g. implementing Google Maps API, creating 3 Postgres tables, adding DELETE functionality
 - Building our first complete backend with Knex and PostgresQL
+- Using Context API for the first time in a section of the project
 
 ## Challenges
 
+- This project was scoped for a larger group, but one of our members came down with COVID at the beginning and had to drop out - trying to make up for that with 2 people proved challenging
 - Self-teaching Knex and PostgresQL in a day while building our first table-style database
 - Resources for using Knex were very hard to come by so it was hard to find anyone to reach out to - we were mostly on our own with the documentation
-- Troubleshooting some obscure Heroku-specific bugs related to SSL permissinos
+- Troubleshooting some obscure Heroku-specific bugs related to SSL permissions
 
 ## Install/ Set Up Instructions
 
