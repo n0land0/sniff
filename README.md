@@ -21,6 +21,11 @@ BROWSE PROFILES VIEW:
 
 ![playdate scheduling](https://i.imgur.com/uMSUS0z.png)
 
+PROFILE VIEW WITH MAP AND PLAYDATE FORM:
+
+![profile](https://user-images.githubusercontent.com/79823098/140982299-33d72e18-f544-4352-90dc-90a0282d71a0.png)
+
+
 1. The landing page of the app is a dashboard view, from which a user can view all of their scheduled past and present (upcoming) playdates
 2. From this same dashboard view, a user may choose to cancel/remove any playdates from their private profile page and/or search for potential new "matches", perusing through other profiles on the site for users who present as good fits for a doggie playdate
 
