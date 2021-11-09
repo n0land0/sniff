@@ -33,6 +33,9 @@ FRONT-END:
 - Cypress
 
 BACK-END:
+
+![ExpressJS](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white)
+![Knex](https://imgur.com/lyO7G8W)
 - Knex
 - PostgreSQL
 - Express
