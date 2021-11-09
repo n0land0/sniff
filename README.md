@@ -9,7 +9,7 @@
 
 ## Abstract
 
-This application is a web-service designed to connect dog owners. Members of the service have the ability view the profiles of other users on the site, and are able to schedule meet-ups/playdates with other members of their choice.
+Sniff is a service for dog owners looking to find friends for their lonely pups. Users have the ability to set up playdates with other users at a local dog park of their choosing. This application was built utilizing React, React Router, SCSS, ExpressJS, KnexJS, and PostgresQL.
 
 ## Snapshots of Application
 
@@ -17,7 +17,7 @@ DASHBOARD VIEW:
 
 ![landing page/dashboard](https://i.imgur.com/2oxQTCz.png)
 
-PLAYDATE SCHEDULING VIEW:
+BROWSE PROFILES VIEW:
 
 ![playdate scheduling](https://i.imgur.com/uMSUS0z.png)
 
@@ -43,12 +43,14 @@ BACK-END:
 
 ## Wins
 
-- Implementing Google Maps API
-- Connecting the Express server to the PostgreSQL
+- Moving beyond MVP into extensions - e.g. implementing Google Maps API, writing 3 tables, adding DELETE functionality
+- Building our first complete backend with Knex and PostgresQL
 
 ## Challenges
 
-- (Same as above)
+- Self-teaching Knex and PostgresQL in a day while building our first table-style database
+- Resources for using Knex were very hard to come by so it was hard to find anyone to reach out to - we were mostly on our own with the documentation
+- Troubleshooting some obscure Heroku-specific bugs related to SSL permissinos
 
 ## Install/ Set Up Instructions
 
