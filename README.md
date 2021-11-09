@@ -59,6 +59,10 @@ The repository for the Sniff API can be found [here](https://github.com/n0land0/
 
 ## Install/ Set Up Instructions
 
+The deployed app can be viewed [here](sniff-app.surge.sh).
+
+If you'd like to run this repo locally:
+
 1. Clone down this repository using the following command:
   ```
   git clone git@github.com:n0land0/sniff.git
