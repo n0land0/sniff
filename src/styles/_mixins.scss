@@ -23,15 +23,10 @@
   border-radius: 10px;
   font-family: $main-font;
   font-size: 1rem;
-  // cursor: pointer;
-  // transform: scale(1.025);
   transition: all 0.1s ease-in-out;
-  // box-shadow: $main-shadow;
-  // text-shadow: 2px 2px #474747;
 }
 
 @mixin profile-containers() {
-  // padding: 1rem 2rem;
   border-radius: 10px;
   background-color: rgba(244, 143, 152, 0.6);
   box-shadow: $main-shadow;

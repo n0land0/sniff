@@ -5,11 +5,8 @@ import Locate from './Locate'
 import ParkMarkers from './ParkMarkers'
 import {PlaydateContext} from '../PlaydateContextProvider'
 import { containerDimensions, center, options, libraries } from './mapConfig'
-// import dogPark from '../assets/dog-park.svg'
-// import './_Map.scss'
 
 const Map = () => {
-  // const { date, setDate, selected, setSelected, location, setLocation, parks, setParks } = useContext(PlaydateContext)
   const { selected, setSelected } = useContext(PlaydateContext)
 
   const mapRef = useRef()
@@ -56,4 +53,3 @@ const Map = () => {
 }
 
 export default Map
-// export default React.memo(Map)

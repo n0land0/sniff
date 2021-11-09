@@ -1,12 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-
 import PlaydateFormAndMap from './PlaydateFormAndMap/PlaydateFormAndMap'
-// import PlaydateForm from '../PlaydateForm/PlaydateForm'
-// import Map from '../Map/Map'
-
 import fetchCalls from '../fetchCalls'
-// import './_Profile.scss'
 
 class Profile extends Component {
   state = {
@@ -45,9 +40,6 @@ class Profile extends Component {
     const { selectedUserId, currentUserId } = this.props
     fetchCalls.getAppointments(+selectedUserId)
       .then((appts) => this.setState({ appointments: appts, status: 'success' }))
-      // .then(() => {
-      //   this.findExistingAppointment()
-      // })
   }
 
   findExistingAppointment = () => {
@@ -66,7 +58,6 @@ class Profile extends Component {
     const { currentUserId, selectedUserId, updateCurrentUser, deleteAppointment } = this.props
     const { owner_name, dog_name, profile_pic, bio } = this.state.selectedUser
     const { appointments, existingAppointment, status, error } = this.state
-    // console.log(currentUserId)
     return (
       <>
       {status === 'loading' && <h1 className='message'>Loading</h1>}

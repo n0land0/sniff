@@ -3,7 +3,6 @@ import {PlaydateContext} from '../PlaydateContextProvider'
 import target from '../../../assets/target.png'
 
 const Locate = ({ panTo, center }) => {
-  // const { date, setDate, selected, setSelected, location, setLocation, parks, setParks } = useContext(PlaydateContext)
     const { setSelected } = useContext(PlaydateContext)
 
   const showMyLocation = () => {

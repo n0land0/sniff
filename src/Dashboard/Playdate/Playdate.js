@@ -1,8 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-// import './_Playdate.scss'
-
 import dayjs from 'dayjs'
 
 const Playdate = ({ id, dogPark, date, ownersId, ownerName, dogName, profilePic, deleteAppointment }) => {

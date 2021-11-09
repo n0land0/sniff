@@ -1,7 +1,5 @@
 import React from 'react'
-
 import Playdate from './Playdate/Playdate'
-// import './_Dashboard.scss'
 
 const Dashboard = ({ appointments, users, deleteAppointment }) => {
   const playdates = appointments.sort((apptA, apptB) =>

@@ -1,8 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-// import './_Card.scss'
-
 const Card = ({ id, owner_name, dog_name, profile_pic, dog_breed }) => {
 
   return (
