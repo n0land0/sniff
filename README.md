@@ -39,6 +39,11 @@ BACK-END:
 ![Heroku](https://img.shields.io/badge/Heroku-430098?style=for-the-badge&logo=heroku&logoColor=white)
 ![Postman](https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=Postman&logoColor=white)
 
+
+## Back End Repository
+
+The repository for the Sniff API can be found [here](https://github.com/n0land0/sniff-api).
+
 ## Wins
 
 - Moving beyond MVP into extensions - e.g. implementing Google Maps API, creating 3 Postgres tables, adding DELETE functionality
