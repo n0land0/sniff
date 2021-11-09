@@ -28,7 +28,9 @@ class App extends Component {
     this.setState({
       currentUser: {...user},
       users: allUsers,
-      appointments: appointments,
+      appointments: appointments.sort((appt1, appt2) =>
+        new Date(appt2.date) - new Date(appt1.date)
+      ),
       status: 'success'
     })
     // .catch(error =>

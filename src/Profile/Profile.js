@@ -19,7 +19,7 @@ class Profile extends Component {
       bio: '',
     },
     appointments: [],
-    existingAppointment: undefined,
+    existingAppointment: null,
     status: 'loading',
     error: ''
   }
@@ -44,18 +44,21 @@ class Profile extends Component {
   updateProfile = () => {
     const { selectedUserId, currentUserId } = this.props
     fetchCalls.getAppointments(+selectedUserId)
-      .then((appts) => this.setState({ appointments: appts }))
+      .then((appts) => this.setState({ appointments: appts, status: 'success' }))
       // .then(() => {
       //   this.findExistingAppointment()
       // })
   }
 
   findExistingAppointment = () => {
-    const upcomingPlaydate = this.state.appointments.find(appt =>
+    const upcomingPlaydate = this.state.appointments.sort((appt1, appt2) =>
+      new Date(appt2.date) - new Date(appt1.date)
+    )
+      .find(appt =>
       appt.ownersId === this.props.currentUserId
     )
     return upcomingPlaydate
-      ? this.setState({ existingAppointment: upcomingPlaydate, status: 'success' })
+      ? this.setState({ existingAppointment: upcomingPlaydate })
       : null
   }
 
@@ -89,6 +92,7 @@ class Profile extends Component {
                     onClick={() => {
                     deleteAppointment(existingAppointment.id)
                     this.updateProfile()
+                    this.findExistingAppointment()
                   }}>cancel</button>
                 </div>
                 </>
