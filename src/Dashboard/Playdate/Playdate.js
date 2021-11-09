@@ -6,10 +6,7 @@ import { Link } from 'react-router-dom'
 import dayjs from 'dayjs'
 
 const Playdate = ({ id, dogPark, date, ownersId, ownerName, dogName, profilePic, deleteAppointment }) => {
-  // const { ownerName, dogName, id } = playmate
   date = dayjs(date).format('ddd MMM D, YYYY')
-
-  // cancel button - post both users' appts, trigger app CDU
 
   return (
     <article className='playdate' style={{backgroundImage: `url(${profilePic})` }}>
