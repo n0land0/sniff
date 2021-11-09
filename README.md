@@ -1,12 +1,5 @@
 # Snïff
 
-- [Project Spec](https://frontend.turing.edu/projects/module-3/stretch.html)
-
-## Contributors
-
-- [Joshua Benefield](https://github.com/Jabene)
-- [Nolan Caine](https://github.com/n0land0)
-
 ## Abstract
 
 Sniff is a service for Denver-based dog owners looking to find friends for their lonely pups. Users have the ability to set up playdates with other users at a local dog park of their choosing. This application was built utilizing React, React Router, SCSS, ExpressJS, KnexJS, and PostgresQL.
@@ -79,3 +72,11 @@ BACK-END:
 - Ability to approve or reject requested playdates
 - Socket-based messaging
 - Expanding coverage to other areas besides Denver
+
+## Contributors
+
+- [Joshua Benefield](https://github.com/Jabene)
+- [Nolan Caine](https://github.com/n0land0)
+
+## Project Spec
+- [Project Spec](https://frontend.turing.edu/projects/module-3/stretch.html) provided by [Turing School of Software & Design](https://turing.edu/)
