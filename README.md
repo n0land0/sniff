@@ -36,7 +36,7 @@ FRONT-END:
 BACK-END:
 
 ![ExpressJS](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white)
-![Knex](https://imgur.com/lyO7G8W)
+![KnexJS](https://user-images.githubusercontent.com/79823098/140978950-21ceb46e-55dd-40e7-b395-65a4afccfbbf.png)
 ![PostgresQL](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)
 ![Heroku](https://img.shields.io/badge/Heroku-430098?style=for-the-badge&logo=heroku&logoColor=white)
 ![Postman](https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=Postman&logoColor=white)
