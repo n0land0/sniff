@@ -1,21 +1,20 @@
-import React, { Component } from 'react'
-import { Route, Switch, Link, Redirect } from 'react-router-dom'
+import React from 'react'
 
-import Playdate from '../Playdate/Playdate'
-import './_Dashboard.scss'
+import Playdate from './Playdate/Playdate'
+// import './_Dashboard.scss'
 
-const Dashboard = ({ appointments, users }) => {
+const Dashboard = ({ appointments, users, deleteAppointment }) => {
   const playdates = appointments.sort((apptA, apptB) =>
     new Date(apptB.date) - new Date(apptA.date)
   ).map(appt =>
-    <Playdate key={appt.id} {...appt}/>
+    <Playdate key={appt.id} {...appt} deleteAppointment={deleteAppointment}/>
   )
 
   return (
     <>
       <section>
       </section>
-      <h2>Playdates</h2>
+      <h2 className='my-playdates'>my playdates</h2>
       <section className='playdates-container'>
         <button
             id="slideLeft"

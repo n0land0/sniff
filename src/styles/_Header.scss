@@ -1,0 +1,67 @@
+// @import './src/_mixins.scss';
+@import '_mixins';
+
+.header {
+  @include flex-align-text();
+  justify-content: center;
+  position: fixed;
+  width: 100%;
+  background-color: #FCFCE8;
+  // background-image: url('../assets/dogs-row-4.webp');
+  // background-size: contain;
+  font-family: 'Dongle', sans-serif;
+}
+
+.header__user-photo-username {
+  position: fixed;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 1.5rem;
+  text-align: center;
+  font-size: 2rem;
+}
+
+.header__user-photo {
+  height: 6rem;
+  width: 6rem;
+  // margin-left: 20px;
+  border-radius: 100%;
+}
+
+.title {
+  width: 100%;
+  font-size: 3.2rem;
+  text-shadow: 1.5px 1.5px 2px #474747;
+}
+
+.header__logo-tagline {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.header__logo {
+  @include flex-align-text();
+  height: 8rem;
+  width: 8rem;
+  background-image: url('https://images.wikia.com/nintendo/en/images/3/3e/MTO_Tennis_Ball.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-family: 'Dongle', sans-serif;
+  cursor: default;
+}
+
+.header__tagline {
+  width: 100%;
+  font-size: 2rem;
+  cursor: default;
+}
+
+.header__username {
+  // margin-top: -5px;
+  // margin-left: 19px;
+  // font-size: 14px;
+}

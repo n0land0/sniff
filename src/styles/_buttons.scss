@@ -1,0 +1,21 @@
+@import '_mixins';
+@import '_variables';
+
+button {
+  @include button-styles();
+}
+
+button:hover {
+  cursor: pointer;
+  transform: scale(1.025);
+}
+
+input,
+select,
+option {
+  font-family: $main-font;
+}
+
+.playdate-reminder__cancel-btn {
+  width: 25%;
+}

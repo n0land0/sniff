@@ -2,11 +2,12 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { BrowserRouter as Router } from 'react-router-dom'
 import App from './App/App'
-import './_reset.css'
-import './index.css'
+import './styles/base.scss'
 
 
 ReactDOM.render(
   <Router>
     <App />
-  </Router>, document.getElementById('root'))
+  </Router>
+  , document.getElementById('root')
+)

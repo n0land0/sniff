@@ -1,0 +1,36 @@
+.profile-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 8%;
+}
+
+.profile__text {
+  font-size: 2rem;
+}
+
+.profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  font-family: 'Dongle', sans-serif;
+  @include profile-containers();
+  padding: 2rem;
+}
+
+.profile__pic {
+  width: 33rem;
+  border-radius: 10px;
+  // height: 20rem;
+}
+
+.playdate-reminder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.playdate-reminder__message {
+  font-size: 2rem;
+}
