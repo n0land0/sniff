@@ -1,70 +1,68 @@
-# Getting Started with Create React App
+# Snïff
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- [Project Spec](https://frontend.turing.edu/projects/module-3/stretch.html)
 
-## Available Scripts
+## Contributors
 
-In the project directory, you can run:
+- [Joshua Benefield](https://github.com/Jabene)
+- [Nolan Caine](https://github.com/n0land0)
 
-### `npm start`
+## Abstract
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+This application is a web-service designed to connect dog owners. Members of the service have the ability view the profiles of other users on the site, and are able to schedule meet-ups/playdates with other members of their choice.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Snapshots of Application
 
-### `npm test`
+DASHBOARD VIEW:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![landing page/dashboard]()
+i.imgur.com/---.png
 
-### `npm run build`
+PLAYDATE SCHEDULING VIEW:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+![playdate scheduling]()
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. The landing page of the app is a dashboard view, from which a user can view all of their scheduled past and present (upcoming) playdates
+2. From this same dashboard view, a user may choose to cancel/remove any playdates from their private profile page and/or search for potential new "matches", perusing through other profiles on the site for users who present as good fits for a doggie playdate
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Technologies
 
-### `npm run eject`
+FRONT-END:
+- React
+- CSS
+- Router
+- Cypress
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+BACK-END:
+- Knex
+- PostgreSQL
+- Express
+- Heroku CLI
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Wins
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- Implementing Google Maps API
+- Connecting the Express server to the PostgreSQL
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Challenges
 
-## Learn More
+- See above
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Install/ Set Up Instructions
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+1. Clone down this repository using the following command:
+  ```
+  git clone git@github.com:n0land0/sniff.git
+  ```
+2. In your terminal, run:
+  ```
+  npm install
+  npm start
+  ```
+3. Enter the following url in your browser: http://localhost:3000/
+4. Explore the website...adventure awaits! HUZZAH!
 
-### Code Splitting
+## Future Features
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+-
+-
