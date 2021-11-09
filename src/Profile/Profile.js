@@ -8,8 +8,6 @@ import PlaydateFormAndMap from './PlaydateFormAndMap/PlaydateFormAndMap'
 import fetchCalls from '../fetchCalls'
 // import './_Profile.scss'
 
-// it's starting to feel like building this as a modal will make site navigation a lot cleaner - confine page changes to navbar
-
 class Profile extends Component {
   state = {
     selectedUser: {
@@ -21,7 +19,7 @@ class Profile extends Component {
       bio: '',
     },
     appointments: [],
-    existingAppointment: '',
+    existingAppointment: undefined,
     status: 'loading',
     error: ''
   }
@@ -37,35 +35,40 @@ class Profile extends Component {
       )
   }
 
+  componentDidUpdate = () => {
+    if (this.props.currentUserId && !this.state.existingAppointment) {
+      this.findExistingAppointment()
+    }
+  }
+
   updateProfile = () => {
-    // fetchCalls.getSingleUser(+this.props.selectedUserId)
-    //   .then((response) => this.setState({ selectedUser: response }))
     const { selectedUserId, currentUserId } = this.props
     fetchCalls.getAppointments(+selectedUserId)
-      .then((appts) =>
-        this.setState({ appointments: appts })
-      )
-      .then(() => {
-        const upcomingPlaydate = this.state.appointments.find(appt =>
-          appt.ownersId === currentUserId
-        )
-        this.setState({ existingAppointment: upcomingPlaydate, status: 'success' })
-      })
+      .then((appts) => this.setState({ appointments: appts }))
+      // .then(() => {
+      //   this.findExistingAppointment()
+      // })
+  }
+
+  findExistingAppointment = () => {
+    const upcomingPlaydate = this.state.appointments.find(appt =>
+      appt.ownersId === this.props.currentUserId
+    )
+    return upcomingPlaydate
+      ? this.setState({ existingAppointment: upcomingPlaydate, status: 'success' })
+      : null
   }
 
   render() {
     const { currentUserId, selectedUserId, updateCurrentUser, deleteAppointment } = this.props
     const { owner_name, dog_name, profile_pic, bio } = this.state.selectedUser
     const { appointments, existingAppointment, status, error } = this.state
-    // const playdateReminder = appointments.find(appt => {
-    //   return appt.ownersId === currentUserId
-    // })
-
+    // console.log(currentUserId)
     return (
       <>
       {status === 'loading' && <h1 className='message'>Loading</h1>}
       {status === 'error' && <h1 className='message'>{error}</h1>}
-      {status === 'success' &&
+      {(currentUserId && status === 'success') &&
         <section className='profile-container'>
           <article className='profile'>
             <img className='profile__pic' src={profile_pic} />
