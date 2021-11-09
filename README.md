@@ -9,7 +9,7 @@
 
 ## Abstract
 
-Sniff is a service for dog owners looking to find friends for their lonely pups. Users have the ability to set up playdates with other users at a local dog park of their choosing. This application was built utilizing React, React Router, SCSS, ExpressJS, KnexJS, and PostgresQL.
+Sniff is a service for Denver-based dog owners looking to find friends for their lonely pups. Users have the ability to set up playdates with other users at a local dog park of their choosing. This application was built utilizing React, React Router, SCSS, ExpressJS, KnexJS, and PostgresQL.
 
 ## Snapshots of Application
 
@@ -68,5 +68,7 @@ BACK-END:
 
 ## Future Features
 
-- Log In functionality. 
-- Sockets.io for client to client direct messaging 
+- Ability to create and log in a user
+- Ability to approve or reject requested playdates
+- Socket-based messaging
+- Expanding coverage to other areas besides Denver
