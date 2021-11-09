@@ -1,5 +1,4 @@
 import React from 'react'
-// import './_Header.scss'
 import Nav from './Nav/Nav'
 
 const Header = ({ profilePic }) => {

@@ -1,6 +1,5 @@
 import React, { createContext, useState, useEffect } from 'react'
 import fetchCalls from '../../fetchCalls'
-// import parksData from '../parksData'
 import dayjs from 'dayjs'
 
 export const PlaydateContext = createContext()

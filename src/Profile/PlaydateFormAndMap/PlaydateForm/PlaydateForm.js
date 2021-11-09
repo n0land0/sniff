@@ -1,12 +1,10 @@
 import React, { useContext } from 'react'
 import { PlaydateContext } from '../PlaydateContextProvider'
-// import './_PlaydateForm.scss'
 
 import fetchCalls from '../../../fetchCalls'
 
 
 const PlaydateForm = ({ currentUserId, selectedUserId, updateProfile, updateCurrentUser }) => {
-  // const { date, setDate, selected, setSelected, location, setLocation, parks, setParks } = useContext(PlaydateContext)
   const { date, setDate, setSelected, location, setLocation, parks } = useContext(PlaydateContext)
 
   const handleChange = (event) => {

@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { Route } from 'react-router-dom'
-// import './_App.scss'
 import fetchCalls from '../fetchCalls'
 
 import Header from '../Header/Header'
@@ -33,9 +32,6 @@ class App extends Component {
       ),
       status: 'success'
     })
-    // .catch(error =>
-    //   this.setState({ error: error.message })
-    // )
   }
 
   deleteAppointment = (appointmentId) => {
