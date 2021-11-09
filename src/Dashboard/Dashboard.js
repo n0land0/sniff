@@ -14,7 +14,7 @@ const Dashboard = ({ appointments, users, deleteAppointment }) => {
     <>
       <section>
       </section>
-      <h2>playdates</h2>
+      <h2 className='my-playdates'>my playdates</h2>
       <section className='playdates-container'>
         <button
             id="slideLeft"
