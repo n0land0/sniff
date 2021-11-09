@@ -68,5 +68,5 @@ BACK-END:
 
 ## Future Features
 
--
--
+- Log In functionality. 
+- Sockets.io for client to client direct messaging 
