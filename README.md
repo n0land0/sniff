@@ -24,20 +24,29 @@ PROFILE VIEW WITH MAP AND PLAYDATE FORM:
 
 ## Technologies
 
-FRONT-END:
+### Front End
 
 ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
 ![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)
 ![SCSS](https://img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=sass&logoColor=white)
 ![Cypress](https://img.shields.io/badge/Cypress-17202C?style=for-the-badge&logo=cypress&logoColor=white)
 
-BACK-END:
+### Back End
 
 ![ExpressJS](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white)
 ![KnexJS](https://user-images.githubusercontent.com/79823098/140978950-21ceb46e-55dd-40e7-b395-65a4afccfbbf.png)
 ![PostgresQL](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)
 ![Heroku](https://img.shields.io/badge/Heroku-430098?style=for-the-badge&logo=heroku&logoColor=white)
 ![Postman](https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=Postman&logoColor=white)
+
+### Dependencies
+
+- Bootstrapped with [Create React App](https://create-react-app.dev/)
+- [Maps JavaScript API](https://developers.google.com/maps/documentation/javascript/overview)
+- [@react-google-maps/api](https://www.npmjs.com/package/@react-google-maps/api)
+- [dayjs](https://www.npmjs.com/package/dayjs)
+- [combobox](https://www.npmjs.com/package/combobox)
+- [use-places-autocomplete](https://www.npmjs.com/package/use-places-autocomplete)
 
 
 ## Back End Repository
