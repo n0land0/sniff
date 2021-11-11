@@ -57,6 +57,7 @@ The repository for the Sniff API can be found [here](https://github.com/n0land0/
 
 - Moving beyond MVP into extensions - e.g. implementing Google Maps API, creating 3 Postgres tables, adding DELETE functionality
 - Building our first complete backend with Knex and PostgresQL
+- Working with dev/production environments for our database
 - Using Context API for the first time in a section of the project
 - Integrating the map with the location dropdown of the playdate form & the browser's built-in geolocation functionality
 
